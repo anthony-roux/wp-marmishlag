@@ -1,6 +1,5 @@
-# Une stack Docker | WordPress vierge
+# WordPress on Docker
 
-Pour nos projets de base WordPress, histoire de garder un environnement de travail propre.
 
 Il y a 3 modules : 
 - WordPress sur le port 5555
