@@ -1,34 +1,30 @@
 version: '3.1'
 
 services:
-    wordpress:
-        image: wordpress
-        restart: always
+    wp_php:
+        build:
+            context: .
+            dockerfile: Dockerfile
         ports:
-            - 5555:80
-        environment:
-            WORDPRESS_DB_HOST: db
-            WORDPRESS_DB_USER: exampleuser
-            WORDPRESS_DB_PASSWORD: examplepass
-            WORDPRESS_DB_NAME: exampledb
+            - '5555:80'
         volumes:
             - ./wordpress:/var/www/html
 
-    db:
-        image: mariadb
+        # nom de serveur = wp_db
+    wp_db: 
+        image: 'mariadb'
         restart: always
-        environment:
-            MYSQL_DATABASE: exampledb
-            MYSQL_USER: exampleuser
-            MYSQL_PASSWORD: examplepass
-            MYSQL_RANDOM_ROOT_PASSWORD: '1'
+        environment: 
+        # user= root
+            MYSQL_DATABASE: data
+            MYSQL_ROOT_PASSWORD: pass
         volumes:
-            - ./datas:/var/lib/mysql
+            - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
 
-    phpmyadmin:
+    wp_pma:
         image: phpmyadmin
         restart: always
         ports:
-            - 8080:80
+            - '8080:80'
         environment:
             - PMA_ARBITRARY=1

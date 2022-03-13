@@ -16,3 +16,21 @@ La stack expose deux volumes :
 docker-compose up -d
 ````
 
+### Pour stop
+````
+docker-compose stop
+````
+
+## 1st installation of Wordpress : 
+Doit correspondre au service "wp_db" du fichier docker-compose.yaml :
+
+- data
+- root
+- pass
+- wp_db
+- wp_
+
+
+## A chaque MAJ de la DB, en cas de corruption de BDD : 
+### --> dans PHPmyAdmin:
+- aller sur data > exporter > Méthode d'exportation : > Choisir "Personnalisée, afficher toutes les options possibles" > dans "Options de création d'objets" > Cocher une instruction CREATE DATABASE / USE > Executer > Drag and Drop le fichier SQL à la racine du projet.
