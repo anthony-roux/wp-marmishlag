@@ -1,0 +1,49 @@
+@tailwindcss components;
+@tailwindcss utilities;
+.entry-content h1, .block-editor-block-list__layout h1{
+    font-size: 1.5rem;
+    line-height: 2rem
+}
+.entry-content h2, .block-editor-block-list__layout h2{
+    font-size: 1.25rem;
+    line-height: 1.75rem
+}
+.entry-content h3, .block-editor-block-list__layout h3{
+    font-size: 1.125rem;
+    line-height: 1.75rem
+}
+.entry-content p, .entry-content ul, .entry-content ol, .block-editor-block-list__layout p, .block-editor-block-list__layout ul, .block-editor-block-list__layout ol{
+    margin-bottom: 2rem
+}
+.entry-content p a, .entry-content ul a, .entry-content ol a, .block-editor-block-list__layout p a, .block-editor-block-list__layout ul a, .block-editor-block-list__layout ol a{
+    --tw-text-opacity: 1;
+    color: rgba(59, 130, 246, var(--tw-text-opacity));
+    text-decoration: underline
+}
+.entry-content p a:hover, .entry-content ul a:hover, .entry-content ol a:hover, .block-editor-block-list__layout p a:hover, .block-editor-block-list__layout ul a:hover, .block-editor-block-list__layout ol a:hover{
+    text-decoration: none
+}
+.entry-content ul li, .block-editor-block-list__layout ul li{
+    list-style-position: inside;
+    list-style-type: disc
+}
+.entry-content ol li, .block-editor-block-list__layout ol li{
+    list-style-position: inside;
+    list-style-type: decimal
+}
+
+.block-editor__typewriter{
+    font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"
+}
+
+.wp-block{
+    max-width: 1024px
+}
+
+.wp-block[data-align=wide]{
+    max-width: 1280px
+}
+
+.wp-block[data-align=full]{
+    max-width: 100%
+}
