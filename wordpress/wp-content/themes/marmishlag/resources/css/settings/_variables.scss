@@ -1,0 +1,81 @@
+$grid-gutter-width: 24px;
+$grid-columns: 12;
+
+$bp-mobile: 576px; //sm
+$bp-tablet: 768px; //md
+$bp-landTablet: 992px; //lg
+$bp-desktop: 1080px; //xl
+$bp-wide: 1400px;
+
+// https://github.com/sass-mq/sass-mq
+// example use :
+//	 	@include mq($from: mobile, $until: tablet) {
+//        background: red;
+//      }
+$mq-breakpoints: (
+mobile:  $bp-mobile,
+tablet:  $bp-tablet,
+desktop: $bp-desktop,
+wide:    $bp-wide
+);
+
+$breakpoints: (
+sm: $bp-mobile,
+md: $bp-tablet,
+lg: $bp-landTablet,
+xl: $bp-desktop,
+);
+
+// Bootstrap
+$screen-sm: $bp-tablet;
+$screen-md: $bp-desktop;
+$screen-lg: $bp-wide;
+
+// fonts
+$pacifico: pacifico, sans-serif;
+$quicksand: quicksand, sans-serif;
+
+
+$regular: 400;
+$medium: 500;
+$semi: 600;
+$bold: 700;
+
+// spaces
+$spacing-xxl: 8rem;
+$spacing-xl: 3.5rem;
+$spacing-lg: 2.5rem;
+$spacing-md: 2rem;
+$spacing-sm: 1.5rem;
+$spacing-xs: 1rem;
+$spacing-xxs: 0.4rem;
+$spacing-0: 	0;
+
+$spacings: (
+"xxl": $spacing-xxl,
+"xl": $spacing-xl,
+"lg": $spacing-lg,
+"md": $spacing-md,
+"sm": $spacing-sm,
+"xs": $spacing-xs,
+"xxs": $spacing-xxs,
+"0":  $spacing-0
+);
+
+
+$black_light:#3a312e1b;
+$black:#3A312E;
+$black-dark: #000000;
+$white:#ffffff;
+$red:	#B52927;
+$beige: #FAF8F6;
+$grey: #918F8D;
+$grey-light:	rgba(58, 49, 46, 0.1);
+
+$colorz: (
+"black": 	$black,
+"white": 	$white,
+"red": 	$red,
+"beige": $beige,
+"grey": $grey
+);

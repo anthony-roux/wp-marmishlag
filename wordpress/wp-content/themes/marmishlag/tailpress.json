@@ -1,9 +1,10 @@
 {
     "colors": {
-        "primary": "#0EA5E9",
-        "secondary": "#14B8A6",
-        "dark": "#1F2937",
-        "light": "#F9FAFB"
+        "primary": "#7376FF",
+        "secondary": "#FC6062",
+        "tertiary": "#6ABDB3",
+        "dark": "#191927",
+        "light": "#F1EFF0"
     },
     "fontSizes": {
         "small": ["14px"],

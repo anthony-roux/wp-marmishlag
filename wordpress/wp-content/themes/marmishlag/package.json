@@ -1,15 +1,11 @@
 {
-	"name": "tailpress",
+	"name": "marmishlag",
 	"version": "0.0.9",
-	"description": "Boilerplate WordPress theme with TailwindCSS.",
-	"author": "Jeffrey van Rossum",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/jeffreyvr/tailpress"
-	},
-	"theme_uri": "https://github.com/jeffreyvr/tailpress",
-	"author_uri": "https://vanrossum.dev",
-	"text_domain": "tailpress",
+	"description": "le marmiton du shlag",
+	"author": "Anthony Roux",
+	"theme_uri": "",
+	"author_uri": "",
+	"text_domain": "",
 	"license": "GPL-2.0",
 	"scripts": {
 		"development": "mix",
