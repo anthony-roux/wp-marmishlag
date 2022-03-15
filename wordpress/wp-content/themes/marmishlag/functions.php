@@ -86,10 +86,10 @@ function marmishlag_setup() {
 	);
 
 	/* Remove adminbar */
-	// function wpc_show_admin_bar() {
-	// 	return false;
-	// }
-	// add_filter('show_admin_bar' , '__return_false');
+	 function wpc_show_admin_bar() {
+	 	return false;
+	 }
+	add_filter('show_admin_bar' , '__return_false');
 
 	// to desactivate gutenberg
 	// add_filter('use_block_editor_for_post', '__return_false', 10);
@@ -248,22 +248,73 @@ register_post_type(
 function create_topics_hierarchical_taxonomy() {
 
 	// Déclaration de la Taxonomie
-	$labels = array(
-		'name' => 'Type de recette',
-		'new_item_name' => 'Nouveau type de recette',
+	$labels_origin = array(
+		'name' => 'Origine',
+		'new_item_name' => 'Nouvelle Origine',
 		'parent_item' => 'Type de projet parent',
-		'menu_name' => __('Type de recette'),
+		'menu_name' => __('Origines'),
 	);
 	
-	$args = array( 
-		'labels' => $labels,
+	$args_origin = array( 
+		'labels' => $labels_origin,
 		'public' => true, 
 		'show_in_rest' => true,
 		'show_admin_column' => true,
 		'hierarchical' => true, 
 	);
 
-	register_taxonomy( 'type_recette', 'recette', $args );
+	register_taxonomy( 'origin', 'recette', $args_origin );
+
+	$labels_level = array(
+		'name' => 'Niveau de difficulté',
+		'new_item_name' => 'Nouveau niveau de difficulté',
+		'parent_item' => 'Type de projet parent',
+		'menu_name' => __('Niveaux de difficulté'),
+	);
+	
+	$args_level = array( 
+		'labels' => $labels_level,
+		'public' => true, 
+		'show_in_rest' => true,
+		'show_admin_column' => true,
+		'hierarchical' => true, 
+	);
+
+	register_taxonomy( 'level', 'recette', $args_level );
+
+	$labels_cost = array(
+		'name' => 'Coût',
+		'new_item_name' => 'Nouveau coût',
+		'parent_item' => 'Type de projet parent',
+		'menu_name' => __('Coûts'),
+	);
+	
+	$args_cost = array( 
+		'labels' => $labels_cost,
+		'public' => true, 
+		'show_in_rest' => true,
+		'show_admin_column' => true,
+		'hierarchical' => true, 
+	);
+
+	register_taxonomy( 'cost', 'recette', $args_cost );
+
+	$labels_setup_time = array(
+		'name' => 'Temps de préparation',
+		'new_item_name' => 'Nouveau temps de préparation',
+		'parent_item' => 'Type de projet parent',
+		'menu_name' => __('Temps de préparation'),
+	);
+	
+	$args_setup_time = array( 
+		'labels' => $labels_setup_time,
+		'public' => true, 
+		'show_in_rest' => true,
+		'show_admin_column' => true,
+		'hierarchical' => true, 
+	);
+
+	register_taxonomy( 'setup_time', 'recette', $args_setup_time );
 }
 
 add_action('init', 'create_topics_hierarchical_taxonomy', 0);
