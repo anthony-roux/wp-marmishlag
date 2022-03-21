@@ -1,16 +1,13 @@
 @tailwindcss components;
 @tailwindcss utilities;
 .entry-content h1, .block-editor-block-list__layout h1{
-    font-size: 1.5rem;
-    line-height: 2rem
+    font-size: 3.2rem
 }
 .entry-content h2, .block-editor-block-list__layout h2{
-    font-size: 1.25rem;
-    line-height: 1.75rem
+    font-size: 2.8rem
 }
 .entry-content h3, .block-editor-block-list__layout h3{
-    font-size: 1.125rem;
-    line-height: 1.75rem
+    font-size: 2rem
 }
 .entry-content p, .entry-content ul, .entry-content ol, .block-editor-block-list__layout p, .block-editor-block-list__layout ul, .block-editor-block-list__layout ol{
     margin-bottom: 2rem
