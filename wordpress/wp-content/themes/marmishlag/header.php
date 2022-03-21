@@ -25,41 +25,40 @@
 				<?php the_custom_logo(); ?>
 					</a>
 			</div>
-					<?php	wp_nav_menu(
-						array(
-							'theme_location'  => 'header',
-							'container'       => 'div',
-							'container_id'    => 'header',
-							'container_class' => 'lg:flex hidden items-center space-x-10',
-							'container_aria_label' => '??',
-							'menu_id'              => 'header__ul',
-							'menu_class'           => 'lg:flex hidden items-center space-x-10',
-							'li_class'        => ' text-sm hover:text-red-500 transition duration-200 cursor-pointer',
-							'fallback_cb'     => false,
-							'walker'         => new Mamounette_dropdown_menu
-						)
-					); ?>
+			<?php	wp_nav_menu(
+				array(
+					'theme_location'  => 'header',
+					'container'       => 'div',
+					'container_id'    => 'header',
+					'container_class' => 'lg:flex hidden items-center space-x-10',
+					'container_aria_label' => '??',
+					'menu_id'              => 'header__ul',
+					'menu_class'           => 'lg:flex hidden items-center space-x-10',
+					'li_class'        => ' text-sm hover:text-red-500 transition duration-200 cursor-pointer',
+					'fallback_cb'     => false,
+					'walker'         => new Mamounette_dropdown_menu
+				)
+			); ?>
 
-				<ul class="lg:flex hidden items-center font-medium space-x-10">
-				
-				<li class="hover:text-red-500 transition duration-200 cursor-pointer">
-				<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-						<path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-				</svg>
-				</li>
-				<li class="hover:text-red-500 transition duration-200 cursor-pointer">
-					<form class="" action="/">
-						<div class="relative text-gray-600 ">
-							<input type="search" aria-label="Search" name="s" value="<?= get_search_query() ?>" placeholder="Search" class="bg-light h-10 px-5 pr-10 rounded-full text-sm focus:outline-none rounded-lg">
-							<button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-									<path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-							</svg>
-							</button>
-						</div>
-					</form>
-				</li>
-			</ul>
+
+			<div class="flex items-center w-2/12 justify-end">
+				<form class="mr-6 w-full" action="/">
+					<div class="relative text-gray-600  ">
+						<input type="search" aria-label="Search" name="s" value="<?= get_search_query() ?>" placeholder="Search" class="w-full bg-light h-10 px-5 pr-10 rounded-full text-sm focus:outline-none rounded-lg">
+						<button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+								<path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+						</svg>
+						</button>
+					</div>
+				</form>
+			
+				<div class=" hover:text-red-500 transition duration-200 cursor-pointer">
+					<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+							<path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+					</svg>
+				</div>
+			</div>
 			<div class="lg:hidden">
 				<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
