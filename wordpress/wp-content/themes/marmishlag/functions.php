@@ -9,7 +9,7 @@ function marmishlag_enqueue_scripts() {
 	wp_enqueue_script( 'jquery' );
 
 	wp_enqueue_style( 'tailpress', marmishlag_get_mix_compiled_asset_url( 'css/app.css' ), array(), $theme->get( 'Version' ) );
-	wp_enqueue_script( 'tailpress', marmishlag_get_mix_compiled_asset_url( 'js/app.js' ), array( 'jquery' ), $theme->get( 'Version' ) );
+	wp_enqueue_script( 'tailpress', marmishlag_get_mix_compiled_asset_url( 'js/app.js' ), array('jquery'), '1.0.0', true, $theme->get( 'Version' ) );
 }
 
 add_action( 'wp_enqueue_scripts', 'marmishlag_enqueue_scripts' );
@@ -64,13 +64,39 @@ function marmishlag_setup() {
 	add_theme_support( 'title-tag' );
 	// Adding Thumbnail basic support.
 	add_theme_support( 'post-thumbnails' );
+	add_theme_support('menus');
+
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(
-		array(
-			'primary' => __( 'Primary Menu', 'tailpress' ),
-		)
-	);
+	// register_nav_menus(
+	// 	array(
+	// 		'primary' => __( 'Primary Menu', 'tailpress' ),
+	// 	)
+	// );
+	register_nav_menu('header', "C'est le menu dans le header");
+
+	add_filter('nav_menu_css_class', function ($classes) {
+    $classes[] = 'text-lg hover:has-secondary-text-color font-medium transition duration-200 cursor-pointer';
+    return $classes;
+	});
+
+	add_filter('nav_menu_link_attributes', function ($atts) {
+			$atts['class'] = "header__item__url text-lg";
+			return $atts;
+	});
+	add_filter( 'nav_menu_submenu_css_class', 'wpdocs_custom_dropdown_class' );
+
+	class Mamounette_dropdown_menu extends Walker_Nav_Menu
+	{
+			function start_lvl( &$output, $depth = 0, $args = array() ) {
+					$indent = str_repeat("\t", $depth);
+					$output .= "\n$indent<div class='c-dropdown'><ul class='c-dropdown__wrapper'>\n";
+			}
+			function end_lvl( &$output, $depth = 0, $args = array() ) {
+					$indent = str_repeat("\t", $depth);
+					$output .= "$indent</ul></div>\n";
+			}
+	}
 
 	// Switch default core markup for search form, comment form, and comments
 	// to output valid HTML5.
@@ -136,51 +162,6 @@ function marmishlag_setup() {
 
 add_action( 'after_setup_theme', 'marmishlag_setup' );
 
-/**
- * Adds option 'li_class' to 'wp_nav_menu'.
- *
- * @param string  $classes String of classes.
- * @param mixed   $item The curren item.
- * @param WP_Term $args Holds the nav menu arguments.
- *
- * @return array
- */
-function marmishlag_nav_menu_add_li_class( $classes, $item, $args, $depth ) {
-	if ( isset( $args->li_class ) ) {
-		$classes[] = $args->li_class;
-	}
-
-	if ( isset( $args->{"li_class_$depth"} ) ) {
-		$classes[] = $args->{"li_class_$depth"};
-	}
-
-	return $classes;
-}
-
-add_filter( 'nav_menu_css_class', 'marmishlag_nav_menu_add_li_class', 10, 4 );
-
-/**
- * Adds option 'submenu_class' to 'wp_nav_menu'.
- *
- * @param string  $classes String of classes.
- * @param mixed   $item The curren item.
- * @param WP_Term $args Holds the nav menu arguments.
- *
- * @return array
- */
-function marmishlag_nav_menu_add_submenu_class( $classes, $args, $depth ) {
-	if ( isset( $args->submenu_class ) ) {
-		$classes[] = $args->submenu_class;
-	}
-
-	if ( isset( $args->{"submenu_class_$depth"} ) ) {
-		$classes[] = $args->{"submenu_class_$depth"};
-	}
-
-	return $classes;
-}
-
-add_filter( 'nav_menu_submenu_css_class', 'marmishlag_nav_menu_add_submenu_class', 10, 3 );
 
 
 if( function_exists('acf_add_options_page') ) {
@@ -210,8 +191,8 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_title'	=> 'Footer',
 		'parent_slug'	=> 'theme-general-settings',
 	));
-
 }
+
 register_post_type(
 	'recette',
 	array(

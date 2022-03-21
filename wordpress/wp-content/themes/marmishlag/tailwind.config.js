@@ -9,12 +9,28 @@ module.exports = {
   mode: "jit",
   tailpress,
   purge: {
-    content: ["./*.php", "./*/*.php", "./safelist.txt"],
+    content: require('fast-glob').sync(["./*.php", "./*/*.php", "./safelist.txt"]),
   },
   theme: {
     fontFamily: {
       pacifico: ["pacifico", "sans-serif"],
       quicksand: ["quicksand", "sans-serif"],
+    },
+    fontSize: {
+      xs: "0.8rem",
+      sm: "0.9rem",
+      base: "1rem",
+      md: "1.1rem",
+      lg: "1.4rem",
+      xl: "1.6rem",
+      "2xl": "1.8rem",
+      "3xl": "2rem",
+      "4xl": "2.4rem",
+      "5xl": "2.8rem",
+      "6xl": "3.2rem",
+      "7xl": "4rem",
+      "8xl": "4.8rem",
+      "9xl": "6rem",
     },
     container: {
       center: true,

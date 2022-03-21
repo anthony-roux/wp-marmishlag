@@ -8,11 +8,11 @@
 /***/ (() => {
 
 // Navigation toggle
-jQuery(document).ready(function ($) {
-  var main_navigation = $("#primary-menu");
-  $("#primary-menu-toggle").on("click", function (e) {
+jQuery(document).ready(function () {
+  var main_navigation = jQuery('#primary-menu');
+  jQuery('#primary-menu-toggle').on('click', function (e) {
     e.preventDefault();
-    main_navigation.toggleClass("hidden");
+    main_navigation.toggleClass('hidden');
   });
 });
 
@@ -130,8 +130,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
-/******/ 			"/js/app": 0,
-/******/ 			"css/app": 0,
+/******/ 			"/public/js/app": 0,
+/******/ 			"public/css/app": 0,
 /******/ 			"editor-style": 0
 /******/ 		};
 /******/ 		
@@ -182,9 +182,9 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/app","editor-style"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/app","editor-style"], () => (__webpack_require__("./resources/css/app.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/app","editor-style"], () => (__webpack_require__("./resources/css/editor-style.scss")))
+/******/ 	__webpack_require__.O(undefined, ["public/css/app","editor-style"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["public/css/app","editor-style"], () => (__webpack_require__("./resources/css/app.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["public/css/app","editor-style"], () => (__webpack_require__("./resources/css/editor-style.scss")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
