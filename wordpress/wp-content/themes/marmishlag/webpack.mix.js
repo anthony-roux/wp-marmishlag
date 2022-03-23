@@ -1,15 +1,19 @@
-let mix = require('laravel-mix');
-let path = require('path');
+let mix = require("laravel-mix");
+let path = require("path");
 
-require('laravel-mix-tailwind');
+require("laravel-mix-tailwind");
 
-mix.setPublicPath(path.resolve('./'));
+mix.setPublicPath(path.resolve("./"));
 
-mix.js('resources/js/app.js', 'js');
+mix.js("resources/js/app.js", "js");
 
-mix.sass("resources/css/app.scss", "css");
+mix.sass("resources/css/app.scss", "css").options({
+  processCssUrls: false,
+});
 
-mix.sass("resources/css/editor-style.scss", "./");
+mix.sass("resources/css/editor-style.scss", "./").options({
+  processCssUrls: false
+});;
 
 mix.tailwind();
 
