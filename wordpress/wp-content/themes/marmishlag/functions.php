@@ -66,13 +66,6 @@ function marmishlag_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support('menus');
 
-
-	// This theme uses wp_nav_menu() in one location.
-	// register_nav_menus(
-	// 	array(
-	// 		'primary' => __( 'Primary Menu', 'tailpress' ),
-	// 	)
-	// );
 	register_nav_menu('header', "C'est le menu dans le header");
 
 	add_filter('nav_menu_css_class', function ($classes) {
@@ -119,8 +112,6 @@ function marmishlag_setup() {
 
 	// to desactivate gutenberg
 	add_filter('use_block_editor_for_post', '__return_false', 10);
-
-
 
 	// Block editor.
 	add_theme_support( 'align-wide' );
@@ -172,12 +163,6 @@ if( function_exists('acf_add_options_page') ) {
 		'menu_slug' 	=> 'theme-general-settings',
 		'capability'	=> 'edit_posts',
 		'redirect'		=> false
-	));
-	
-	acf_add_options_sub_page(array(
-		'page_title' 	=> 'Theme Header Settings',
-		'menu_title'	=> 'Header',
-		'parent_slug'	=> 'theme-general-settings',
 	));
 
 	acf_add_options_sub_page(array(
