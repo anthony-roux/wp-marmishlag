@@ -26,3 +26,6 @@ wp-content/themes/forks_and_papillas/node_modules
 /readme.html
 /sitemap.xml
 /sitemap.xml.gz
+
+/wordpress/wp-content/themes/marmishlag/css/app.css
+/wordpress/wp-content/themes/marmishlag/js/app.js
