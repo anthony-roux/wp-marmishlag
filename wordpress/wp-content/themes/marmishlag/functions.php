@@ -152,6 +152,28 @@ function marmishlag_setup() {
 
 	add_theme_support( 'editor-color-palette', $colors );
 	add_theme_support( 'editor-font-sizes', $font_sizes );
+
+
+		/**
+	* Filter the excerpt length to 20 words.
+	*
+	* @param int $length Excerpt length.
+	* @return int (Maybe) modified excerpt length.
+	*/
+	function wpdocs_custom_excerpt_length( $length ) {
+		return 30;
+	}
+	
+	add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+
+	// function new_excerpt_more($more) {
+	// 	global $post;
+	// 	return '<a class="moretag t-link" 
+	// 	href="'. get_permalink($post->ID) . '">Lire la suite</a>';
+	//  }
+	//  add_filter('excerpt_more', 'new_excerpt_more');
+	
 }
 
 add_action( 'after_setup_theme', 'marmishlag_setup' );
@@ -200,7 +222,7 @@ register_post_type(
 					'not_found_in_trash'  => 'Non trouvée dans la corbeille',
 			),
 			'menu_icon'           => 'dashicons-calendar-alt',
-			'supports'            => array('title', 'editor', 'author', 'thumbnail', 'revisions', 'custom-fields', 'page-attributes' ),
+			'supports'            => array('title', 'editor', 'author', 'thumbnail', 'excerpt', 'revisions', 'custom-fields', 'page-attributes' ),
 			'taxonomies' 					=> array('category', 'type_recette'),
 			'hierarchical'        => false,
 			'public'              => true,

@@ -13,7 +13,7 @@
       array(
         'taxonomy' => 'origin',
         'field' => 'slug',
-        'terms' => 'taxo_origin_france' // you need to know the term_id of your term "example 1"
+        'terms' => 'origin_france' // you need to know the term_id of your term "example 1"
          )
     )    
   
