@@ -65,6 +65,9 @@ function marmishlag_setup() {
 	// Adding Thumbnail basic support.
 	add_theme_support( 'post-thumbnails' );
 	add_theme_support('menus');
+	add_image_size( 'listing-card', 384, 182, true, array( 'center', 'top' ) );
+	add_image_size( 'listing-card-without-crop', 384, 182, false );
+	add_image_size( 'header-article', 643, 528, true );
 
 	register_nav_menu('header', "C'est le menu dans le header");
 

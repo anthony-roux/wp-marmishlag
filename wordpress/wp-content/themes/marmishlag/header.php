@@ -12,10 +12,10 @@
 <body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
 
 
-<div id="page" class="min-h-screen flex flex-col">
+<div id="page" class="">
 
 
-	<header class="header sticky top-0 left-0 transition duration-200 shadow-greyDarkerMedium ">
+	<header class="header sticky top-0 left-0 transition duration-200 shadow-greyDarkerMedium z-10 ">
 		<nav class="container flex justify-between items-center bg-white py-6  ">
 			<div class="">
 				<a href="<?php echo get_bloginfo( 'url' ); ?>">
@@ -79,11 +79,11 @@
 		</nav>
 	</header>
 
-	<div id="content" class="container site-content flex-grow ">
+	<div id="content" class=" site-content flex-grow container  min-h-[80vh] ">
 
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>
-		<div class="text-center mx-auto mt-16 mb-10 border-b w-2/4 h-[33vh]">
+		<div class="text-center mx-auto mt-16 mb-10 border-b md:w-2/4 h-[33vh]">
 			<h1 class="font-bold text-8xl text-secondary">Mamounette</h1>
 			<h2 class="mx-auto text-3xl lg:text-5xl max-w-2xl tracking-tight font-quicksand my-8">Une envie particulière ? Tapez là ! </h2>
 			<form class="" action="/">
