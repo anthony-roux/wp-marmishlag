@@ -1,4 +1,4 @@
-// Import here each JS file from the scripts forlder : 
+// Import here each JS file from the scripts forlder :
 
-import './scripts/LikeBadge';
-
+import "./scripts/LikeBadge";
+import "./scripts/Login";

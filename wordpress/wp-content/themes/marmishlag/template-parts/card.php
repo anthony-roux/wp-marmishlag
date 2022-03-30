@@ -34,18 +34,22 @@ if ( has_post_thumbnail() ) { ?>
     <?php endif; ?>
 
     <div class="relative w-2/4 bg-cover bg-center rounded-md" style="background-image: url('<?= the_post_thumbnail_url('listing-card') ?>'); ">
-      <div class="s-like-badge rounded-xl w-16 h-16 shadow absolute -top-8 -right-8 overflow-hidden flex items-center justify-center cursor-pointer">
-        <input type="checkbox" name="like-badge-<?php the_ID(); ?>" id="like-badge-<?php the_ID(); ?>" class="appearance-none" >
-        <label for="like-badge-<?php the_ID(); ?>" class="w-16 h-16">
-          <div class=" rounded-xl p-3 ">
-            <svg width="26" height="26" viewBox="0 0 48 48" fill="none" class="" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 8C8.925 8 4 12.925 4 19C4 30 17 40 24 42.326C31 40 44 30 44 19C44 12.925 39.075 8 33 8C29.28 8 25.99 9.847 24 12.674C22.9857 11.2292 21.6382 10.0501 20.0715 9.23649C18.5049 8.42289 16.7653 7.99875 15 8Z" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-        </label>
+        <div class="s-like-badge rounded-xl w-16 h-16 shadow absolute -top-8 -right-8 overflow-hidden flex items-center justify-center ">
+          <input type="checkbox" name="like-badge-<?php the_ID(); ?>" id="like-badge-<?php the_ID(); ?>" data-id="<?php the_ID(); ?>" class="appearance-none" >
+          <label for="like-badge-<?php the_ID(); ?>" class="w-16 h-16">
+
+          
+            <div class=" rounded-xl p-3 cursor-pointer">
+              <svg width="26" height="26" viewBox="0 0 48 48" fill="none" class="" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 8C8.925 8 4 12.925 4 19C4 30 17 40 24 42.326C31 40 44 30 44 19C44 12.925 39.075 8 33 8C29.28 8 25.99 9.847 24 12.674C22.9857 11.2292 21.6382 10.0501 20.0715 9.23649C18.5049 8.42289 16.7653 7.99875 15 8Z" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+        
+
+          </label>
 
 
-      </div>
+        </div>
     </div>
   
     <div class="px-8 py-6 w-2/4 md:min-w-2/4 flex flex-col justify-between">

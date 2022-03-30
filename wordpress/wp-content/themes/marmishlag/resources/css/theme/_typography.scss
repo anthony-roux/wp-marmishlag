@@ -17,12 +17,13 @@
     @extend %text--xs;
   }
   &--md {
-    @extend %text--xs;
+    @extend %text--md;
   }
+
   &--lg {
-    @extend %text--xs;
+    @extend %text--lg;
   }
   &--xl {
-    @extend %text--xs;
+    @extend %text--xl;
   }
 }
