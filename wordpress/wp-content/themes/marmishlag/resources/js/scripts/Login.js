@@ -1,5 +1,5 @@
 jQuery(document).ready(function ($) {
-  main_navigation.toggleClass("hidden");
+
   $(function () {
     $(".btn").click(function () {
       $(".form-signin").toggleClass("form-signin-left");
