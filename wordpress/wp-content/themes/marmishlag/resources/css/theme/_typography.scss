@@ -1,0 +1,28 @@
+.t-title {
+  @extend %title;
+
+  &--lg {
+    @extend %title--lg;
+  }
+
+  &--xl {
+    @extend %title--xl;
+  }
+}
+
+.t-text {
+  @extend %text;
+
+  &--xs {
+    @extend %text--xs;
+  }
+  &--md {
+    @extend %text--xs;
+  }
+  &--lg {
+    @extend %text--xs;
+  }
+  &--xl {
+    @extend %text--xs;
+  }
+}

@@ -1,10 +1,4 @@
-// Navigation toggle
-jQuery(document).ready(function ($) {
-  const main_navigation = $("#primary-menu");
+// Import here each JS file from the scripts forlder : 
 
-  $("#primary-menu-toggle").on("click", function (e) {
-    e.preventDefault();
+import './scripts/LikeBadge';
 
-    main_navigation.toggleClass("hidden");
-  });
-});
