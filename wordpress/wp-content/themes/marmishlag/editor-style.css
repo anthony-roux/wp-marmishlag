@@ -9,9 +9,6 @@
 .entry-content h3, .block-editor-block-list__layout h3{
     font-size: 2rem
 }
-.entry-content p, .entry-content ul, .entry-content ol, .block-editor-block-list__layout p, .block-editor-block-list__layout ul, .block-editor-block-list__layout ol{
-    margin-bottom: 2rem
-}
 .entry-content p a, .entry-content ul a, .entry-content ol a, .block-editor-block-list__layout p a, .block-editor-block-list__layout ul a, .block-editor-block-list__layout ol a{
     --tw-text-opacity: 1;
     color: rgba(59, 130, 246, var(--tw-text-opacity));

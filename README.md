@@ -44,10 +44,6 @@ npm run watch
 
 
 
-
-
-
-
 ## 1st installation of Wordpress : 
 Doit correspondre au service "wp_db" du fichier docker-compose.yaml :
 
