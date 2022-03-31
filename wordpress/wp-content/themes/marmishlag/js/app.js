@@ -5,14 +5,67 @@
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
   \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _scripts_LikeBadge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scripts/LikeBadge */ "./resources/js/scripts/LikeBadge.js");
+/* harmony import */ var _scripts_LikeBadge__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scripts_LikeBadge__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _scripts_Login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/Login */ "./resources/js/scripts/Login.js");
+/* harmony import */ var _scripts_Login__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scripts_Login__WEBPACK_IMPORTED_MODULE_1__);
+// Import here each JS file from the scripts forlder :
+
+
+
+/***/ }),
+
+/***/ "./resources/js/scripts/LikeBadge.js":
+/*!*******************************************!*\
+  !*** ./resources/js/scripts/LikeBadge.js ***!
+  \*******************************************/
 /***/ (() => {
 
-// Navigation toggle
 jQuery(document).ready(function ($) {
-  var main_navigation = $("#primary-menu");
-  $("#primary-menu-toggle").on("click", function (e) {
-    e.preventDefault();
-    main_navigation.toggleClass("hidden");
+  $(".c-card input[type='checkbox']").click(function () {
+    if ($(this).is(":checked")) {
+      $(this).addClass("isChecked");
+      $(this).attr("data-state", "checked");
+
+      var _isChecked = $(this).is(":checked");
+
+      $(this).attr("checked");
+      $(this).closest("article.c-card").addClass("cardIsLove");
+      localStorage.setItem('checked', _isChecked);
+    } else if ($(this).is(":not(:checked)")) {
+      $(this).removeClass("isChecked");
+      $(this).attr("data-state", "unchecked");
+      $(this).closest("article.c-card").removeClass("cardIsLove");
+    }
+  }); // stored in localStorage as string, `toggle` needs boolean
+
+  var isChecked = localStorage.getItem('checked') === 'false' ? false : true;
+  $(".c-card input[type='checkbox']").toggle(isChecked);
+});
+
+/***/ }),
+
+/***/ "./resources/js/scripts/Login.js":
+/*!***************************************!*\
+  !*** ./resources/js/scripts/Login.js ***!
+  \***************************************/
+/***/ (() => {
+
+jQuery(document).ready(function ($) {
+  $(function () {
+    $(".btn").click(function () {
+      $(".form-signin").toggleClass("form-signin-left");
+      $(".form-signup").toggleClass("form-signup-left");
+      $(".frame").toggleClass("frame-long");
+      $(".signup-inactive").toggleClass("signup-active");
+      $(".signin-active").toggleClass("signin-inactive");
+      $(".forgot").toggleClass("forgot-left");
+      $(this).removeClass("idle").addClass("active");
+    });
   });
 });
 
@@ -106,6 +159,30 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -172,7 +249,7 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 			return __webpack_require__.O(result);
 /******/ 		}
 /******/ 		
-/******/ 		var chunkLoadingGlobal = self["webpackChunkmarmishlag"] = self["webpackChunkmarmishlag"] || [];
+/******/ 		var chunkLoadingGlobal = self["webpackChunkmamounette"] = self["webpackChunkmamounette"] || [];
 /******/ 		chunkLoadingGlobal.forEach(webpackJsonpCallback.bind(null, 0));
 /******/ 		chunkLoadingGlobal.push = webpackJsonpCallback.bind(null, chunkLoadingGlobal.push.bind(chunkLoadingGlobal));
 /******/ 	})();
