@@ -13,9 +13,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scripts_LikeBadge__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scripts_LikeBadge__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _scripts_Login__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./scripts/Login */ "./resources/js/scripts/Login.js");
 /* harmony import */ var _scripts_Login__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scripts_Login__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _scripts_Burger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/Burger */ "./resources/js/scripts/Burger.js");
+/* harmony import */ var _scripts_Burger__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scripts_Burger__WEBPACK_IMPORTED_MODULE_2__);
 // Import here each JS file from the scripts forlder :
 
 
+
+
+/***/ }),
+
+/***/ "./resources/js/scripts/Burger.js":
+/*!****************************************!*\
+  !*** ./resources/js/scripts/Burger.js ***!
+  \****************************************/
+/***/ (() => {
+
+jQuery(document).ready(function ($) {
+  $("#nav-burger").click(function () {
+    $("#header__center").toggleClass("translate-x-full");
+    $("#header__ul").toggleClass("hidden");
+  });
+  $("#header__ul li").click(function () {
+    $("#header__center").toggleClass("translate-x-full");
+  });
+  $("#header__ul .c-dropdown li").click(function () {
+    $("#header__center").toggleClass("translate-x-full");
+  });
+});
 
 /***/ }),
 
