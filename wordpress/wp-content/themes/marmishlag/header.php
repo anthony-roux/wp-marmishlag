@@ -12,7 +12,7 @@
 <body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
 
 
-<div id="page" class="overflow-scroll lg:overflow-auto h-screen lg:h-auto relative">
+<div id="page" class="overflow-scroll lg:overflow-visible h-screen lg:h-auto relative">
 
 
 	<header class="header sticky top-0 left-0 transition duration-200 shadow-greyDarkerMedium z-10 bg-white ">
