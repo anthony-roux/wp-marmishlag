@@ -2,7 +2,7 @@
 <?php get_header(); 
 ?>
 
-<h1 class="mt-16 mb-32 text-9xl">Bienvenue en France </h1>
+<p class="mt-16 mb-32 text-9xl">Bienvenue en France </p>
 
 <div class="grid grid-cols-1 gap-12 mt-12 mb-24 list-articles lg:grid-cols-2">
 <?php

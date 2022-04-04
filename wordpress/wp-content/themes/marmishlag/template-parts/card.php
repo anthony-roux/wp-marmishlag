@@ -19,7 +19,7 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
   }
 ?>
 
-<article  class="c-card w-full md:w-auto shadow-greyDarkerMedium rounded-md  relative transition duration-300 hover:scale-[1.02] group" > 
+<article <?php post_class("c-card w-full md:w-auto shadow-greyDarkerMedium rounded-md  relative transition duration-300 hover:scale-[1.02] group"); ?> > 
   <a href="<?php esc_url( the_permalink() ) ?>" id="post-<?php the_ID(); ?>"  class="flex w-full min-h-full">
     <?php if ( has_post_thumbnail() ) { ?>
       <div class="relative w-2/4 bg-center bg-cover rounded-md" style="background-image: url('<?= the_post_thumbnail_url('listing-card') ?>'); ">
@@ -47,15 +47,15 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
       <?php endif; ?>
 
       <div class="c-card__header">
-        <h3 class="text-4xl transition-colors card__title group-hover:has-primary-text-color "><?php the_title(); ?></h3>
+        <h3 class="mt-6 text-4xl transition-colors card__title group-hover:has-primary-text-color"><?php the_title(); ?></h3>
         <hr>
-        <div class="mb-5 card__excerpt"><?php the_excerpt(); ?></div>
+        <div class="mb-5 card__excerpt"><?php the_excerpt(__('(voir plus…)')); ?></div>
       </div>
       <div class="flex flex-col justify-between c-card__content">
-        <div class="flex flex-col justify-between lg:flex-row">
+        <div class="flex flex-col flex-wrap justify-between lg:flex-row">
           <?php if($level): ?>
             <div class="my-2">
-              <p class="uppercase">Niveau <span><?= strtolower($level) ?></span> </p>
+              <p class="uppercase"><span><?= strtolower($level) ?></span> </p>
             </div>
           <?php endif; ?>
           <?php if($cost): ?>

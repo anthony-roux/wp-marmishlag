@@ -3,13 +3,13 @@
 
 </div>
 
-<footer id="colophon" class="site-footer bg-light py-12" role="contentinfo">
+<footer id="colophon" class="py-12 site-footer bg-light" role="contentinfo">
 	<?php do_action( 'tailpress_footer' ); ?>
-	<div class="container  p-8">
-    <div class="sm:flex mb-4">
-			<div class="sm:w-1/4 h-auto">
-				<div class="text-primary mb-2 t-text--lg">Lorem Ipsum</div>
-				<ul class="list-reset leading-normal">
+	<div class="container p-8">
+    <div class="mb-4 sm:flex">
+			<div class="h-auto sm:w-1/4">
+				<div class="mb-2 text-primary t-text--lg">Lorem Ipsum</div>
+				<ul class="leading-normal list-reset">
 						<li class="text-lg hover:text-secondary text-dark">One</li>
 						<li class="text-lg hover:text-secondary text-dark">Two</li>
 						<li class="text-lg hover:text-secondary text-dark">Three</li>
@@ -20,41 +20,41 @@
 						<li class="text-lg hover:text-secondary text-dark">Eight</li>
 				</ul>
 			</div>
-		<div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
-			<div class="text-primary mb-2 t-text--lg">Lorem Ipsum</div>
-			<ul class="list-reset leading-normal">
+		<div class="h-auto mt-8 sm:w-1/4 sm:mt-0">
+			<div class="mb-2 text-primary t-text--lg">Lorem Ipsum</div>
+			<ul class="leading-normal list-reset">
 				<li class="text-lg hover:text-secondary text-dark">One</li>
 				<li class="text-lg hover:text-secondary text-dark">Two</li>
 				<li class="text-lg hover:text-secondary text-dark">Three</li>
 			</ul>
 
-			<div class="text-primary mb-2 mt-4 t-text--lg">Lorem Ipsum</div>
-			<ul class="list-reset leading-normal">
+			<div class="mt-4 mb-2 text-primary t-text--lg">Lorem Ipsum</div>
+			<ul class="leading-normal list-reset">
 				<li class="text-lg hover:text-secondary text-dark">One</li>
 				<li class="text-lg hover:text-secondary text-dark">Two</li>
 				<li class="text-lg hover:text-secondary text-dark">Three</li>
 			</ul>
 			</div>
-			<div class="sm:w-1/4 h-auto sm:mt-0 mt-8">
-				<div class="text-primary mb-2 t-text--lg">Lorem Ipsum</div>
-				<ul class="list-reset leading-normal">
+			<div class="h-auto mt-8 sm:w-1/4 sm:mt-0">
+				<div class="mb-2 text-primary t-text--lg">Lorem Ipsum</div>
+				<ul class="leading-normal list-reset">
 					<li class="text-lg hover:text-secondary text-dark">One</li>
 					<li class="text-lg hover:text-secondary text-dark">Two</li>
 					<li class="text-lg hover:text-secondary text-dark">Three</li>
 				</ul>
-				<div class="text-primary mb-2 mt-4 t-text--lg">Lorem Ipsum</div>
-				<ul class="list-reset leading-normal">
+				<div class="mt-4 mb-2 text-primary t-text--lg">Lorem Ipsum</div>
+				<ul class="leading-normal list-reset">
 					<li class="text-lg hover:text-secondary text-dark ">One</li>
 					<li class="text-lg hover:text-secondary text-dark ">Two</li>
 					<li class="text-lg hover:text-secondary text-dark ">Three</li>
 				</ul>
 			</div>
-    	<div class="sm:w-1/2 sm:mt-0 mt-8 h-auto">
-				<div class="text-primary mb-2 t-title--lg">Newsletter</div>
-				<p class="text-lg text-dark leading-normal">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, consectetur. </p>
-				<div class="mt-4 flex">
-					<input type="text" class="p-2 border border-grey-light round text-grey-dark text-sm h-auto" placeholder="Your email address">
-					<button class="bg-secondary text-white rounded-sm h-auto text-lg   p-3">Subscribe</button>
+    	<div class="h-auto mt-8 sm:w-1/2 sm:mt-0">
+				<div class="mb-2 text-primary t-title--lg">Newsletter</div>
+				<p class="text-lg leading-normal text-dark">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi, consectetur. </p>
+				<div class="flex mt-4">
+					<input type="text" class="h-auto p-2 text-sm border rounded-l-sm border-grey-light text-grey-dark" placeholder="Your email address">
+					<button class="h-auto p-3 text-lg text-white rounded-sm bg-secondary">Subscribe</button>
 				</div>
     	</div>
 

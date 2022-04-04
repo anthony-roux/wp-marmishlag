@@ -176,8 +176,8 @@ function mamounettePaginateLinks()
     $paginateLink = paginate_links(['type' => 'array']);
     if ($paginateLink) {
         ob_start();
-        echo '<nav aria-label="Pagination" class="my-12">';
-        echo '<ul class="pagination flex">';
+        echo '<nav aria-label="Pagination" class="my-20">';
+        echo '<ul class="flex pagination">';
 
         foreach ($paginateLink as $link) {
             echo sprintf('<li class="page-item %s mr-3">%s</li>',
@@ -191,6 +191,21 @@ function mamounettePaginateLinks()
         return ob_get_clean();
     }
 }
+
+/**
+ * Add 'last' class to last post
+ * Must be using <?php post_class(" all your classes here"); ?>
+ */
+function add_last_class($classes) {
+	global $wp_query;
+
+  if(($wp_query->current_post + 8) == $wp_query->post_count)
+    $classes[] = 'last-post lg:col-span-2 lg:row-span-2 ';
+
+  return $classes;
+}
+
+add_filter('post_class', 'add_last_class');
 
 if( function_exists('acf_add_options_page') ) {
 	

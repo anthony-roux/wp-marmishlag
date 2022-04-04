@@ -3,9 +3,9 @@
 <?php get_header(); 
 ?>
 
-<h1 class="text-9xl mt-16 mb-32">Bienvenue en Amérique </h1>
+<p class="mt-16 mb-32 text-9xl">Bienvenue en Amérique </p>
 
-<div class="list-articles mt-12 mb-24 grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div class="grid grid-cols-1 gap-12 mt-12 mb-24 list-articles lg:grid-cols-2">
 <?php
   
   $loop = new WP_Query(array(
