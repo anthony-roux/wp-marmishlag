@@ -171,7 +171,26 @@ function marmishlag_setup() {
 
 add_action( 'after_setup_theme', 'marmishlag_setup' );
 
+function mamounettePaginateLinks()
+{
+    $paginateLink = paginate_links(['type' => 'array']);
+    if ($paginateLink) {
+        ob_start();
+        echo '<nav aria-label="Pagination" class="my-12">';
+        echo '<ul class="pagination flex">';
 
+        foreach ($paginateLink as $link) {
+            echo sprintf('<li class="page-item %s mr-3">%s</li>',
+                str_contains($link, 'current') ? 'active' : '',
+                str_replace('page-numbers', 'page-link', $link));
+        }
+
+        echo "</ul>";
+        echo "</nav>";
+
+        return ob_get_clean();
+    }
+}
 
 if( function_exists('acf_add_options_page') ) {
 	

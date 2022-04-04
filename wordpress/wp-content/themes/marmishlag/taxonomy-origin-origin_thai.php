@@ -3,9 +3,9 @@
 <?php get_header(); 
 ?>
 
-<h1 class="text-9xl mt-32 mb-32">Bienvenue en Thaïlande </h1>
+<h1 class="mt-16 mb-32 text-9xl">Bienvenue en Thaïlande </h1>
 
-<div class="list-articles mt-12 mb-24 flex justify-around flex-wrap">
+<div class="grid grid-cols-1 gap-12 mt-12 mb-24 list-articles lg:grid-cols-2">
 <?php
   
   $loop = new WP_Query(array(

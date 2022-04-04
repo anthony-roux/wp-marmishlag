@@ -676,8 +676,17 @@ video {
 .mt-32{
 	margin-top: 8rem !important;
 }
+.mt-3{
+	margin-top: 0.75rem !important;
+}
+.mr-3{
+	margin-right: 0.75rem !important;
+}
 .flex{
 	display: flex !important;
+}
+.grid{
+	display: grid !important;
 }
 .hidden{
 	display: none !important;
@@ -762,6 +771,15 @@ video {
 	   -moz-appearance: none !important;
 	        appearance: none !important;
 }
+.grid-cols-3{
+	grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+}
+.grid-cols-2{
+	grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+.grid-cols-1{
+	grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+}
 .flex-row{
 	flex-direction: row !important;
 }
@@ -788,6 +806,15 @@ video {
 }
 .justify-around{
 	justify-content: space-around !important;
+}
+.gap-4{
+	gap: 1rem !important;
+}
+.gap-8{
+	gap: 2rem !important;
+}
+.gap-12{
+	gap: 3rem !important;
 }
 .space-x-10 > :not([hidden]) ~ :not([hidden]){
 	--tw-space-x-reverse: 0 !important;
@@ -1990,6 +2017,26 @@ picture {
 	--tw-scale-y: 1.05 !important;
 	transform: var(--tw-transform) !important;
 }
+.hover\:scale-\[105\]:hover{
+	--tw-scale-x: 105 !important;
+	--tw-scale-y: 105 !important;
+	transform: var(--tw-transform) !important;
+}
+.hover\:scale-\[102\]:hover{
+	--tw-scale-x: 102 !important;
+	--tw-scale-y: 102 !important;
+	transform: var(--tw-transform) !important;
+}
+.hover\:scale-\[1\.2\]:hover{
+	--tw-scale-x: 1.2 !important;
+	--tw-scale-y: 1.2 !important;
+	transform: var(--tw-transform) !important;
+}
+.hover\:scale-\[1\.02\]:hover{
+	--tw-scale-x: 1.02 !important;
+	--tw-scale-y: 1.02 !important;
+	transform: var(--tw-transform) !important;
+}
 .hover\:bg-primary:hover{
 	--tw-bg-opacity: 1 !important;
 	background-color: rgba(115, 118, 255, var(--tw-bg-opacity)) !important;
@@ -2075,6 +2122,9 @@ picture {
 	.md\:w-3\/4{
 		width: 75% !important;
 	}
+	.md\:w-auto{
+		width: auto !important;
+	}
 	.md\:max-w-\[45\%\]{
 		max-width: 45% !important;
 	}
@@ -2123,6 +2173,9 @@ picture {
 	.lg\:translate-x-0{
 		--tw-translate-x: 0px !important;
 		transform: var(--tw-transform) !important;
+	}
+	.lg\:grid-cols-2{
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
 	}
 	.lg\:flex-row{
 		flex-direction: row !important;
