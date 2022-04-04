@@ -28,6 +28,8 @@
             ?>
 
               <div class="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
+
+              <?php the_content(); ?>
                 <form>
                     <div class="mb-6">
                       <input
