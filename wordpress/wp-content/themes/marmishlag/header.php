@@ -79,7 +79,7 @@
 	</header>
  
 	<?php      
-		if (!is_page_template( array( 'template-account.php'))) {
+		if (!is_page_template( array( 'template-account.php', 'template-my_recipes.php', 'template-create_recipe.php'))) {
 			$container = 'container';
 		} else {
 			$container = '';

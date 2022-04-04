@@ -9,32 +9,7 @@
 add_shortcode('gestionrecetteshetic', 'gestion_recettes_hetic');
 add_action('init', 'register_post_type_recette');
 add_action('init', 'register_taxonomy_recette');
-add_action('init', 'gestion_recettes');
 
-function gestion_recettes() {
-	if (isset($_POST['ajouter_recette'])) {
-		if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['tax_origin']) && isset($_POST['tax_level']) && isset($_POST['tax_cost']) && isset($_POST['tax_setup_time'])) {
-			wp_insert_post([
-				'post_title' => $_POST['title'],
-				'post_content' => $_POST['content'],
-				'post_type' => 'recette',
-				'post_status' => 'pending',
-				'post_author' => get_current_user_id(),
-				'comment_status' => 'closed',
-				'tax_input' => array(
-					'origin' => array($_POST['tax_origin']),
-					'level' => array($_POST['tax_level']),
-					'cost' => array($_POST['tax_cost']),
-					'setup_time' => array($_POST['tax_setup_time'])
-				)
-			]);
-			$notif = "Validé !";
-		}
-		else {
-			$notif = "Champs";
-		}
-	}
-}
 
 function gestion_recettes_hetic($atts) {
     require_once 'GestionRecettesHetic.php';
