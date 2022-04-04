@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div class="mx-auto my-8 index-page">
+<div class="list-articles flex justify-around flex-wrap mx-auto mt-12 mb-24 index-page">
 
 	<?php if ( have_posts() ) : ?>
 		<?php

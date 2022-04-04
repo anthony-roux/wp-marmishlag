@@ -2,9 +2,9 @@
 <?php get_header(); 
 ?>
 
-<h1 class="text-9xl mb-44">Bienvenue en France </h1>
+<h1 class="text-9xl mt-32 mb-32">Bienvenue en France </h1>
 
-<div class="list-articles my-auto flex justify-around flex-wrap">
+<div class="list-articles mt-12 mb-24 flex justify-around flex-wrap">
 <?php
   
   $loop = new WP_Query(array(
