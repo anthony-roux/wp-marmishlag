@@ -635,6 +635,7 @@ video {
 .mb-44{
 	margin-bottom: 11rem !important;
 }
+
 .mb-6{
 	margin-bottom: 1.5rem !important;
 }
@@ -2015,6 +2016,7 @@ picture {
 .hover\:has-secondary-text-color:hover{
 	color: #FC6062;
 }
+
 .focus\:border-primary:focus{
 	--tw-border-opacity: 1 !important;
 	border-color: rgba(115, 118, 255, var(--tw-border-opacity)) !important;
@@ -2104,6 +2106,10 @@ picture {
 	}
 }
 @media (min-width: 1024px){
+
+	.lg\:mt-16{
+		margin-top: 4rem !important;
+	}
 	.lg\:static{
 		position: static !important;
 	}
@@ -2187,6 +2193,21 @@ picture {
 	.xl\:w-5\/12{
 		width: 41.666667% !important;
 	}
+	.xl\:max-w-screen-sm{
+		max-width: 640px !important;
+	}
+	.xl\:max-w-2xl{
+		max-width: 42rem !important;
+	}
+	.xl\:px-24{
+		padding-left: 6rem !important;
+		padding-right: 6rem !important;
+	}
+	.xl\:text-3xl{
+		font-size: 2rem !important;
+	}
+}
+@media (min-width: 1280px){
 	.xl\:max-w-screen-sm{
 		max-width: 640px !important;
 	}
