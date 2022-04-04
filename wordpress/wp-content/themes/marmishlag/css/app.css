@@ -608,6 +608,9 @@ video {
 .mt-4{
 	margin-top: 1rem !important;
 }
+.mt-6{
+	margin-top: 1.5rem !important;
+}
 .mt-5{
 	margin-top: 1.25rem !important;
 }
@@ -646,9 +649,6 @@ video {
 }
 .mb-12{
 	margin-bottom: 3rem !important;
-}
-.mt-6{
-	margin-top: 1.5rem !important;
 }
 .flex{
 	display: flex !important;
@@ -825,6 +825,9 @@ video {
 .bg-white{
 	--tw-bg-opacity: 1 !important;
 	background-color: rgba(250, 250, 250, var(--tw-bg-opacity)) !important;
+}
+.bg-transparent{
+	background-color: transparent !important;
 }
 .bg-indigo-500{
 	--tw-bg-opacity: 1 !important;
@@ -1918,6 +1921,10 @@ picture {
   transition: all 0.25s ease;
 }
 
+.form__section {
+  margin-top: 130px;
+}
+
 .form-signin {
   width: 430px;
   height: 375px;
@@ -2100,38 +2107,14 @@ picture {
 	.lg\:static{
 		position: static !important;
 	}
-	.lg\:mx-6{
-		margin-left: 1.5rem !important;
-		margin-right: 1.5rem !important;
+	.lg\:m-8{
+		margin: 2rem !important;
 	}
-	.lg\:mx-1{
-		margin-left: 0.25rem !important;
-		margin-right: 0.25rem !important;
-	}
-	.lg\:mx-12{
-		margin-left: 3rem !important;
-		margin-right: 3rem !important;
-	}
-	.lg\:mt-16{
-		margin-top: 4rem !important;
+	.lg\:mr-40{
+		margin-right: 10rem !important;
 	}
 	.lg\:mt-0{
 		margin-top: 0px !important;
-	}
-	.lg\:mr-20{
-		margin-right: 5rem !important;
-	}
-	.lg\:mr-0{
-		margin-right: 0px !important;
-	}
-	.lg\:mr-14{
-		margin-right: 3.5rem !important;
-	}
-	.lg\:ml-12{
-		margin-left: 3rem !important;
-	}
-	.lg\:ml-8{
-		margin-left: 2rem !important;
 	}
 	.lg\:ml-20{
 		margin-left: 5rem !important;
@@ -2139,8 +2122,11 @@ picture {
 	.lg\:mr-8{
 		margin-right: 2rem !important;
 	}
-	.lg\:mr-40{
-		margin-right: 10rem !important;
+	.lg\:mt-16{
+		margin-top: 4rem !important;
+	}
+	.lg\:ml-8{
+		margin-left: 2rem !important;
 	}
 	.lg\:flex{
 		display: flex !important;
@@ -2195,9 +2181,6 @@ picture {
 	}
 	.lg\:text-5xl{
 		font-size: 2.8rem !important;
-	}
-	.lg\:text-lg{
-		font-size: 1.4rem !important;
 	}
 }
 @media (min-width: 1280px){

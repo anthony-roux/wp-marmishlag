@@ -23,7 +23,7 @@
 					<?php the_custom_logo(); ?>
 				</a>
 			</div>
-			<div id="header__center" class="flex flex-col-reverse justify-end lg:flex-row translate-x-full lg:translate-x-0 transition-all duration-300 absolute lg:static top-28 left-0 z-50 bg-light lg:bg-transparent w-full lg:w-auto h-screen lg:h-auto p-12 lg:p-0 lg:mr-40 ">
+			<div id="header__center" class="flex flex-col-reverse justify-end lg:flex-row translate-x-full lg:translate-x-0 transition-all duration-300 absolute lg:static top-28 left-0 z-50 bg-light lg:bg-transparent w-full lg:w-auto h-screen lg:h-auto p-12 lg:p-0 ">
 				<?php	wp_nav_menu(
 					array(
 						'theme_location'  => 'header',
