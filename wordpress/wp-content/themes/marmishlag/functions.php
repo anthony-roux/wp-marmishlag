@@ -167,14 +167,6 @@ function marmishlag_setup() {
 	
 	add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
 
-
-	// function new_excerpt_more($more) {
-	// 	global $post;
-	// 	return '<a class="moretag t-link" 
-	// 	href="'. get_permalink($post->ID) . '">Lire la suite</a>';
-	//  }
-	//  add_filter('excerpt_more', 'new_excerpt_more');
-	
 }
 
 add_action( 'after_setup_theme', 'marmishlag_setup' );

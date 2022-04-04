@@ -4,6 +4,7 @@
  * Template Post Type: page
  */
 ?>
+
 <?php get_template_part( 'header' ); 
  ?>
 
@@ -22,6 +23,10 @@
         </aside>
         <main role="main" class="w-full sm:w-2/3 md:w-3/4 pt-1 px-2">
           <div class="w-full lg:w-1/2 xl:w-5/12 px-4">
+            <?php _("../../plugins/gestion-recettes-hetic/GestionRecettesHetic.php");     
+          
+            ?>
+
               <div class="bg-white relative rounded-lg p-8 sm:p-12 shadow-lg">
                 <form>
                     <div class="mb-6">
