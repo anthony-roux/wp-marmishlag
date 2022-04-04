@@ -59,7 +59,7 @@ class GestionRecettesHetic {
                         'setup_time' => array($_POST['tax_setup_time'])
                     )
                 ]);
-                $this->notif = "Validé !";
+                $this->notif = "Recette envoyée !";
             }
             else {
                 $this->notif = "Champs";
