@@ -12,47 +12,46 @@
 <body <?php body_class( 'bg-white text-gray-900 antialiased' ); ?>>
 
 
-<div id="page" class="">
+<div id="page" class="overflow-scroll lg:overflow-auto h-screen lg:h-auto relative">
 
 
-	<header class="header sticky top-0 left-0 transition duration-200 shadow-greyDarkerMedium z-10 ">
-		<nav class="container flex justify-between items-center bg-white py-6  ">
-			<div class="">
+	<header class="header sticky top-0 left-0 transition duration-200 shadow-greyDarkerMedium z-10 bg-white ">
+		<nav class="container flex justify-between items-center py-6  ">
+			<div class="header__logo min-h-[24px] min-w-max">
 				<a href="<?php echo get_bloginfo( 'url' ); ?>">
 					<img class="h-16 cursor-pointer" src="<?= get_template_directory_uri(); ?>/img/logo.png" alt="" />
 					<?php the_custom_logo(); ?>
 				</a>
 			</div>
-			<div class="md:w-5/12">
+			<div id="header__center" class="flex flex-col-reverse justify-end lg:flex-row translate-x-full lg:translate-x-0 transition-all duration-300 absolute lg:static top-28 left-0 z-50 bg-light lg:bg-transparent w-full lg:w-auto h-screen lg:h-auto p-12 lg:p-0 lg:mr-40 ">
 				<?php	wp_nav_menu(
 					array(
 						'theme_location'  => 'header',
 						'container'       => 'div',
-						'container_id'    => 'header',
-						'container_class' => 'lg:flex hidden items-center space-x-10',
+						'container_id'    => '',
+						'container_class' => 'lg:flex items-center space-x-10  ',
 						'container_aria_label' => '??',
 						'menu_id'              => 'header__ul',
-						'menu_class'           => 'lg:flex hidden items-center space-x-10',
-						'li_class'        => ' text-sm hover:text-red-500 transition duration-200 cursor-pointer',
+						'menu_class'           => 'lg:flex hidden items-center lg:space-x-10 py-12 lg:py-0',
+						'li_class'        => 'text-sm hover:text-red-500 transition duration-200 cursor-pointer',
 						'fallback_cb'     => false,
 						'walker'         => new Mamounette_dropdown_menu
 					)
 				); ?>
-
+				<form class="header__form mt-6 lg:mt-0 lg:ml-20 lg:mr-8 w-auto" action="/">
+					<div class=" relative text-gray-600 w-auto">
+						<input type="search" aria-label="Search" name="s" value="<?= get_search_query() ?>" placeholder="Search" class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg">
+						<button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+						<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+								<path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
+						</svg>
+						</button>
+					</div>
+				</form>
 			</div>
 
-			<div class="flex md:w-5/12 lg:w-5/12 justify-end">
+			<div class="flex top justify-end ">
 				<div class="flex items-center justify-end w-full">
-					<form class=" mr-6 w-auto" action="/">
-						<div class=" relative text-gray-600 w-auto">
-							<input type="search" aria-label="Search" name="s" value="<?= get_search_query() ?>" placeholder="Search" class="w-full bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg">
-							<button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
-							<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-									<path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd" />
-							</svg>
-							</button>
-						</div>
-					</form>
 				
 					<div class="w-full lg:w-auto flex items-center justify-end  hover:text-red-500 transition duration-200 cursor-pointer">
 						<!-- log in -->
@@ -70,7 +69,7 @@
 					
 	
 				</div>
-				<div class="ml-3 lg:hidden flex items-center">
+				<div id="nav-burger" class="ml-3 lg:hidden flex items-center">
 					<svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 cursor-pointer" fill="none" viewBox="0 0 24 24" stroke="currentColor">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
 					</svg>
@@ -78,8 +77,16 @@
 			</div>
 		</nav>
 	</header>
-
-	<div id="content" class=" site-content flex-grow container  min-h-[80vh] ">
+ 
+	<?php      
+		if (!is_page_template( array( 'template-account.php'))) {
+			$container = 'container';
+		} else {
+			$container = '';
+		}
+	?>
+	<div id="content" class=" site-content flex-grow <?= $container; ?>
+  min-h-[80vh] ">
 
 		<!-- Start introduction -->
 		<?php if ( is_front_page() ) : ?>

@@ -72,12 +72,12 @@ function marmishlag_setup() {
 	register_nav_menu('header', "C'est le menu dans le header");
 
 	add_filter('nav_menu_css_class', function ($classes) {
-    $classes[] = 'text-lg hover:has-secondary-text-color font-medium transition duration-200 cursor-pointer';
+    $classes[] = 'hover:has-secondary-text-color font-medium transition duration-200 cursor-pointer';
     return $classes;
 	});
 
 	add_filter('nav_menu_link_attributes', function ($atts) {
-			$atts['class'] = "header__item__url text-lg";
+			$atts['class'] = "header__item__url ";
 			return $atts;
 	});
 	add_filter( 'nav_menu_submenu_css_class', 'wpdocs_custom_dropdown_class' );
@@ -111,6 +111,7 @@ function marmishlag_setup() {
 	 function wpc_show_admin_bar() {
 	 	return false;
 	 }
+	 
 	add_filter('show_admin_bar' , '__return_false');
 
 	// to desactivate gutenberg

@@ -24,7 +24,7 @@ if ( has_post_thumbnail() ) { ?>
 <article  class="c-card w-full md:max-w-[45%] shadow-greyDarkerMedium rounded-md my-6 md:mx-6 relative transition duration-300 hover:scale-105 group" > 
 
 <?php } else { ?>
-  <article  class="c-card" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/pizza.jpg');"> 
+  <article  class="c-card" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/gazpacho.jpeg');"> 
 <?php } ?>
 
   <a href="<?php esc_url( the_permalink() ) ?>" id="post-<?php the_ID(); ?>"  class="flex w-full min-h-full">
