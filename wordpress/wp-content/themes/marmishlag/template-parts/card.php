@@ -18,22 +18,15 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
     $setup_time = '';
   }
 ?>
-<?php 
 
-if ( has_post_thumbnail() ) { ?>
 <article  class="c-card w-full md:max-w-[45%] shadow-greyDarkerMedium rounded-md my-6 md:mx-6 relative transition duration-300 hover:scale-105 group" > 
-
-<?php } else { ?>
-  <article  class="c-card" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/gazpacho.jpeg');"> 
-<?php } ?>
-
   <a href="<?php esc_url( the_permalink() ) ?>" id="post-<?php the_ID(); ?>"  class="flex w-full min-h-full">
+    <?php if ( has_post_thumbnail() ) { ?>
+      <div class="relative w-2/4 bg-cover bg-center rounded-md" style="background-image: url('<?= the_post_thumbnail_url('listing-card') ?>'); ">
+    <?php } else { ?>
 
-    <?php if(get_field('top_restaurant') == 1): ?>
-      <img class="topicon" src="<?php echo get_template_directory_uri(); ?>/img/incontournable.svg" alt="Top restaurant">
-    <?php endif; ?>
-
-    <div class="relative w-2/4 bg-cover bg-center rounded-md" style="background-image: url('<?= the_post_thumbnail_url('listing-card') ?>'); ">
+    <div class="relative w-2/4 bg-cover bg-center rounded-md" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/gazpacho.jpeg');">
+    <?php } ?>
         <div class="s-like-badge rounded-xl w-16 h-16 shadow absolute -top-8 -right-8 overflow-hidden flex items-center justify-center ">
           <input type="checkbox" name="like-badge-<?php the_ID(); ?>" id="like-badge-<?php the_ID(); ?>" data-id="<?php the_ID(); ?>" class="appearance-none" >
           <label for="like-badge-<?php the_ID(); ?>" class="w-16 h-16">
@@ -63,7 +56,7 @@ if ( has_post_thumbnail() ) { ?>
         <div class="card__excerpt mb-5"><?php the_excerpt(); ?></div>
       </div>
       <div class="c-card__content flex flex-col justify-between">
-        <div class="flex justify-between flex-col md:flex-row">
+        <div class="flex justify-between flex-col lg:flex-row">
           <?php if($level): ?>
             <div class="my-2">
               <p class="uppercase">Niveau <span><?= strtolower($level) ?></span> </p>
