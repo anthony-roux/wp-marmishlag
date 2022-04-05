@@ -3,7 +3,7 @@
 <?php get_header(); 
 ?>
 
-<p class="mt-16 mb-32 text-9xl">Bienvenue en Espagne </p>
+<h1 class="mt-16 mb-32 text-9xl">Bienvenue en Thaïlande </h1>
 
 <div class="grid grid-cols-1 gap-12 mt-12 mb-24 list-articles lg:grid-cols-2">
 <?php
@@ -14,7 +14,7 @@
       array(
         'taxonomy' => 'origin',
         'field' => 'slug',
-        'terms' => 'origin_spain' // you need to know the term_id of your term "example 1"
+        'terms' => 'origin_thai' // you need to know the term_id of your term "example 1"
          )
     )    
   

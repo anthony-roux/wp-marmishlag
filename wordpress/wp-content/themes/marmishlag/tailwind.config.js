@@ -100,6 +100,9 @@ module.exports = {
     extend: {
       colors: tailpress.colors,
     },
+    scale: {
+      flip: '-1',
+    },
   },
   plugins: [
     plugin(function ({

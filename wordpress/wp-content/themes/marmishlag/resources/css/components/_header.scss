@@ -11,20 +11,6 @@
       @include mq($from: $bp-desktop) {
         font-size: 1.3rem;
       }
-
-
-      &-type-taxonomy {
-        // a {
-        //   font-size: 1.6rem !important;
-        // }
-      }
     }
   }
-
-  // &__form {
-  //   margin-top: 1.6rem;
-  //   @include mq($from: $bp-desktop) {
-  //     margin-top: 1.6rem;
-  //   }
-  // }
 }
