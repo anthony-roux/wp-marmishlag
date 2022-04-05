@@ -44,7 +44,7 @@ class GestionRecettesHetic {
         $this->render = $attributes['render'];
         
         if (isset($_POST['ajouter'])) {
-            if (isset($_POST['title']) && isset($_POST['content']) && isset($_POST['tax_origin']) && isset($_POST['tax_level']) && isset($_POST['tax_cost']) && isset($_POST['tax_setup_time'])) {
+            if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['tax_origin']) && !empty($_POST['tax_level']) && !empty($_POST['tax_cost']) && !empty($_POST['tax_setup_time'])) {
                 wp_insert_post([
                     'post_title' => $_POST['title'],
                     'post_content' => $_POST['content'],
@@ -62,7 +62,7 @@ class GestionRecettesHetic {
                 $this->notif = "Recette envoyée !";
             }
             else {
-                $this->notif = "Champs";
+                $this->notif = "Veuillez compléter tous les champs";
             }
         }
     }
