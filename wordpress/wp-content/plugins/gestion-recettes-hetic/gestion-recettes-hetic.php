@@ -36,6 +36,7 @@ function create_post_type_recette() {
         'rewrite' => array( 'slug' => esc_html__('recette'))
     ];
     register_post_type('recette', $args);
+	add_theme_support( 'post-thumbnails' );
 }
 
 function create_taxonomy_recette() {
@@ -100,7 +101,7 @@ function create_taxonomy_recette() {
 	register_taxonomy('setup_time', 'recette', $args_setup_time);
 }
 
-function admin_post_add_post_type_recette() {
+function function_admin_post_add_recettes() {
 	status_header(200);
 	$notif = "";
 
@@ -120,6 +121,23 @@ function admin_post_add_post_type_recette() {
                     'setup_time' => array($_POST['tax_setup_time']),
                 )
             ]);
+			
+			$recent_posts = wp_get_recent_posts(array('post_type'=>'recette'));
+
+			if (!empty($recent_posts[0]['ID']) && wp_verify_nonce($_POST['image_upload_nonce'], 'image_upload')) {
+				$attachment_id = media_handle_upload('image_upload', $recent_posts[0]['ID']);
+		
+				if (is_wp_error($attachment_id)) {
+					$notif_upload = "error";
+				}
+				else {
+					set_post_thumbnail($recent_posts[0]['ID'], $attachment_id);
+					$notif_upload = $attachment_id;
+				}
+			}
+			else {
+				$notif_upload = "no_nonce";
+			}
             $notif = "1";
         }
         else {
@@ -142,7 +160,7 @@ function shortcode_gestion_recettes_hetic($atts) {
 
 add_action('init', 'create_post_type_recette');
 add_action('init', 'create_taxonomy_recette');
-add_action('admin_post_add_recettes', 'admin_post_add_post_type_recette');
+add_action('admin_post_add_recettes', 'function_admin_post_add_recettes');
 add_shortcode('gestionrecetteshetic', 'shortcode_gestion_recettes_hetic');
 
 ?>

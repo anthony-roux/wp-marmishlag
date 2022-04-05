@@ -60,7 +60,7 @@ class GestionRecettesHetic {
 <?php
         if ($this->render == "form") :
 ?>
-        <form method="post" action="<?= admin_url($url_action); ?>">
+        <form method="post" action="<?= admin_url($url_action); ?>" enctype="multipart/form-data">
             <label for="title">Title</label><br>
             <input type="text" id="title" name="title"><br><br>
             <label for="content">Content</label><br>
@@ -105,7 +105,11 @@ class GestionRecettesHetic {
             endforeach; 
 ?>
             </select><br><br>
+            <input type="file" name="image_upload" id="image_upload" multiple="false"><br><br>
+
             <input type="hidden" name="action" value="add_recettes">
+            <?php wp_nonce_field('image_upload', 'image_upload_nonce'); ?>
+            <?php wp_referer_field(); ?>
             <input type="submit" value="<?= $this->text_submit ?>" name="ajouter">
         </form>
 <?php
