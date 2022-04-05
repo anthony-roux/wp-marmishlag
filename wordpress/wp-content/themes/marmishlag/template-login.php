@@ -49,16 +49,20 @@
                             <input type="hidden" value="1" name="testcookie">
 
 						</form>
-						<form class="form-signup" action="" method="post" name="form">
+						<form class="form-signup" action="<?php echo home_url().'/signup'; ?>" method="post" name="form">
 							<div>
-								<input class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg" type="" placeholder="Votre adresse e-mail">
+								<input class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg" type="" placeholder="Votre username" name="user_login">
 							</div>
+                            <div class="mt-8">
+
+                                <input class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg" type="" placeholder="Votre email" name="user_email">
+                            </div>
 							<div class="mt-8">
 
-								<input class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg" type="" placeholder="Votre mot de passe ">
+								<input class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg" type="" placeholder="Votre mot de passe" name="user_pass">
 							</div>
 							<div class="mt-8">
-								<input class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg" type="" placeholder="Comfirmez le mot de passe">
+								<input class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg" type="" placeholder="Comfirmez le mot de passe" name="user_pass">
 								<div class="flex justify-between items-center">
 									<div>
 										<a class="px-5 text-xs font-display font-semibold text-dark hover:text-indigo-800
