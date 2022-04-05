@@ -2,7 +2,7 @@
 
 <p class="mt-24 mb-32 text-9xl">Toutes nos recettes</p>
 
-<div class="grid grid-cols-1 grid-rows-6 gap-12 mx-auto mt-12 mb-24 lg:grid-cols-2 list-articles index-page">
+<div class="grid grid-cols-1 grid-rows-5 gap-12 mx-auto mt-12 mb-24 lg:grid-cols-2 list-articles index-page">
 
 
 	<?php if ( have_posts() ) : ?>

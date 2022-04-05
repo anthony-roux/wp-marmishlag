@@ -19,26 +19,30 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
   }
 ?>
 
-<article <?php post_class("c-card w-full md:w-auto shadow-greyDarkerMedium rounded-md  relative transition duration-300 hover:scale-[1.02] group"); ?> > 
-  <a href="<?php esc_url( the_permalink() ) ?>" id="post-<?php the_ID(); ?>"  class="flex w-full min-h-full">
+
+
+<article <?php post_class("c-card w-full md:w-auto shadow-greyDarkerMedium rounded-md  relative transition duration-300 hover:scale-[1.02] group"); ?> id="post-<?php the_ID(); ?>" > 
+  <a href="<?php esc_url( the_permalink() ) ?>" data-id="post-<?php the_ID(); ?>"  class="flex w-full min-h-full">
     <?php if ( has_post_thumbnail() ) { ?>
       <div class="relative w-2/4 bg-center bg-cover rounded-md" style="background-image: url('<?= the_post_thumbnail_url('listing-card') ?>'); ">
     <?php } else { ?>
 
     <div class="relative w-2/4 bg-center bg-cover rounded-md" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/gazpacho.jpeg');">
     <?php } ?>
-        <div class="absolute flex items-center justify-center w-16 h-16 overflow-hidden shadow s-like-badge rounded-xl -top-8 -right-8 ">
-          <input type="checkbox" name="like-badge-<?php the_ID(); ?>" id="like-badge-<?php the_ID(); ?>" data-id="<?php the_ID(); ?>" class="appearance-none" >
-          <label for="like-badge-<?php the_ID(); ?>" class="w-16 h-16">
-
-          
-            <div class="p-3 cursor-pointer rounded-xl">
-              <svg width="26" height="26" viewBox="0 0 48 48" fill="none" class="" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 8C8.925 8 4 12.925 4 19C4 30 17 40 24 42.326C31 40 44 30 44 19C44 12.925 39.075 8 33 8C29.28 8 25.99 9.847 24 12.674C22.9857 11.2292 21.6382 10.0501 20.0715 9.23649C18.5049 8.42289 16.7653 7.99875 15 8Z" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-          </label>
+      <div class="absolute z-10 flex items-center justify-center w-16 h-16 overflow-hidden shadow s-like-badge rounded-xl -top-8 -right-8 ">
+      <?php if($args["class"] == "cardIsLove"){ ?> 
+        <input type="checkbox" name="like-badge-<?php the_ID(); ?>" id="like-badge-<?php the_ID(); ?>" checked data-id="<?php the_ID(); ?>" class="appearance-none  like-badge-<?php the_ID(); ?>" >
+        <? } else { ?> 
+          <input type="checkbox" name="like-badge-<?php the_ID(); ?>" id="like-badge-<?php the_ID(); ?>"  data-id="<?php the_ID(); ?>" class="appearance-none  like-badge-<?php the_ID(); ?>" >
+        <?php } ?>
+        <div class="w-16 h-16 card-likeable like-badge-<?php the_ID(); ?>">    
+          <div class="p-3 cursor-pointer rounded-xl">
+            <svg width="26" height="26" viewBox="0 0 48 48" fill="none" class="" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 8C8.925 8 4 12.925 4 19C4 30 17 40 24 42.326C31 40 44 30 44 19C44 12.925 39.075 8 33 8C29.28 8 25.99 9.847 24 12.674C22.9857 11.2292 21.6382 10.0501 20.0715 9.23649C18.5049 8.42289 16.7653 7.99875 15 8Z" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
         </div>
+      </div>
     </div>
   
     <div class="flex flex-col justify-between w-2/4 px-8 py-6 md:min-w-2/4">

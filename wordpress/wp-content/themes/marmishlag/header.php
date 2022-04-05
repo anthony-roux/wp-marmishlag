@@ -15,7 +15,7 @@
 <div id="page" class="relative h-screen overflow-scroll lg:overflow-visible lg:h-auto">
 
 
-	<header class="sticky top-0 left-0 z-10 transition duration-200 bg-white header shadow-greyDarkerMedium ">
+	<header class="sticky top-0 left-0 z-30 transition duration-200 bg-white header shadow-greyDarkerMedium ">
 		<nav class="container flex items-center justify-between py-6 ">
 			<div class="header__logo min-h-[24px] min-w-max">
 				<a href="<?php echo get_bloginfo( 'url' ); ?>">

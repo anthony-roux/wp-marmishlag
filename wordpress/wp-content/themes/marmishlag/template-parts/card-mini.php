@@ -27,8 +27,8 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
 
 <article <?php post_class("c-card shadow-greyDarkerMedium rounded-md relative transition duration-300 w-full h-[30rem] relative "); ?> > 
   <div class="absolute z-10 flex items-center justify-center w-16 h-16 overflow-hidden shadow hover:opacity-100 s-like-badge rounded-xl -top-8 -right-8 ">
-    <input type="checkbox" name="like-badge-<?php the_ID(); ?>" id="like-badge-<?php the_ID(); ?>" data-id="<?php the_ID(); ?>" class="appearance-none" >
-    <label for="like-badge-<?php the_ID(); ?>" class="w-16 h-16">
+    <input type="checkbox" name="like-badge-<?php the_ID(); ?>" id="like-badge-<?php the_ID(); ?>"  data-id="<?php the_ID(); ?>" class="appearance-none  like-badge-<?php the_ID(); ?>" >
+    <div  class="w-16 h-16 card-likeable like-badge-<?php the_ID(); ?>">
 
     
       <div class="p-3 cursor-pointer rounded-xl">
@@ -36,10 +36,10 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
         <path d="M15 8C8.925 8 4 12.925 4 19C4 30 17 40 24 42.326C31 40 44 30 44 19C44 12.925 39.075 8 33 8C29.28 8 25.99 9.847 24 12.674C22.9857 11.2292 21.6382 10.0501 20.0715 9.23649C18.5049 8.42289 16.7653 7.99875 15 8Z" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-    </label>
+    </div>
   </div>
 
-  <a href="<?php esc_url( the_permalink() ) ?>" id="post-<?php the_ID(); ?>"  class="relative flex w-full h-full min-h-full rounded-lg group">
+  <a href="<?php esc_url( the_permalink() ) ?>" data-id="post-<?php the_ID(); ?>"  class="relative flex w-full h-full min-h-full rounded-lg group">
     <?php if ( has_post_thumbnail() ) { ?>
       <div class="w-full h-full transition-opacity duration-500 bg-center bg-cover rounded-md hover:opacity-0" style="background-image: url('<?= the_post_thumbnail_url('listing-card') ?>'); ">
       </div>
