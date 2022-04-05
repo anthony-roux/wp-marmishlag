@@ -21,12 +21,12 @@
 						</ul>
 					</div>
 					<div class="mt-12">
-						<form class="form-signin" action="" method="post" name="form">
+						<form class="form-signin" action="<?php echo site_url( '/wp-login.php' ); ?>" method="post" name="form">
 							<div>
-								<input class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg" type="" placeholder="Your e-mail">
+								<input class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg" type="text" placeholder="Your username" name="log">
 							</div>
 							<div class="mt-8">
-								<input class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg" type="" placeholder="Enter your password">
+								<input class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg" type="password" placeholder="Enter your password" name="pwd">
 								<div>
 									<a class="px-5 text-xs font-display font-semibold text-dark hover:text-indigo-800
 									cursor-pointer">
@@ -44,6 +44,10 @@
 							<div class="mt-6 text-sm font-display font-semibold text-gray-700 text-center">
 								Vous n'avez pas de compte ? <a class="cursor-pointer text-primary hover:text-primary">S'inscrire</a>
 							</div>
+
+                            <input type="hidden" value="<?php echo esc_attr( "/" ); ?>" name="redirect_to">
+                            <input type="hidden" value="1" name="testcookie">
+
 						</form>
 						<form class="form-signup" action="" method="post" name="form">
 							<div>
