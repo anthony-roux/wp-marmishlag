@@ -6,17 +6,7 @@
  * Author URI: https://davy-chen.fr
  */
 
-add_shortcode('gestionrecetteshetic', 'gestion_recettes_hetic');
-add_action('init', 'register_post_type_recette');
-add_action('init', 'register_taxonomy_recette');
-
-function gestion_recettes_hetic($atts) {
-    require_once 'GestionRecettesHetic.php';
-    $GestionRecettesHetic = new GestionRecettesHetic($atts);
-    return $GestionRecettesHetic->render();
-}
-
-function register_post_type_recette() {
+function create_post_type_recette() {
     $labels = [
         'name' => 'Recettes',
         'singular_name' => 'Recettes',
@@ -48,7 +38,7 @@ function register_post_type_recette() {
     register_post_type('recette', $args);
 }
 
-function register_taxonomy_recette() {
+function create_taxonomy_recette() {
 	$labels_origin = array(
 		'name' => 'Origine',
 		'new_item_name' => 'Nouvelle Origine',
@@ -109,5 +99,45 @@ function register_taxonomy_recette() {
 	);
 	register_taxonomy('setup_time', 'recette', $args_setup_time);
 }
+
+function admin_post_add_post_type_recette() {
+	status_header(200);
+	$notif = "";
+
+    if (isset($_POST['ajouter'])) {
+        if (!empty($_POST['title']) && !empty($_POST['content'])) {
+            wp_insert_post([
+                'post_title' => $_POST['title'],
+                'post_content' => $_POST['content'],
+                'post_type' => 'recette',
+                'post_status' => 'pending',
+                'post_author' => get_current_user_id(),
+                'comment_status' => 'closed',
+                'tax_input' => array(
+                    'origin' => array($_POST['tax_origin']),
+                    'level' => array($_POST['tax_level']),
+                    'cost' => array($_POST['tax_cost']),
+                    'setup_time' => array($_POST['tax_setup_time']),
+                )
+            ]);
+            $notif = "1";
+        }
+        else {
+            $notif = "0";
+        }
+    }
+	header("Location:http://localhost/davy_wordpress/gestion?notif=" . $notif);
+}
+
+function shortcode_gestion_recettes_hetic($atts) {
+    require_once 'GestionRecettesHetic.php';
+    $GestionRecettesHetic = new GestionRecettesHetic($atts);
+    return $GestionRecettesHetic->render();
+}
+
+add_action('init', 'create_post_type_recette');
+add_action('init', 'create_taxonomy_recette');
+add_action('admin_post_add_recettes', 'admin_post_add_post_type_recette');
+add_shortcode('gestionrecetteshetic', 'shortcode_gestion_recettes_hetic');
 
 ?>
