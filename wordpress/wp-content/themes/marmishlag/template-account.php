@@ -3,8 +3,13 @@
  * Template Name: Account
  * Template Post Type: page
  */
-?>
 
+
+if (!is_user_logged_in()) {
+    wp_redirect(home_url());
+}
+
+?>
 <?php get_template_part( 'header' ); 
  ?>
 
