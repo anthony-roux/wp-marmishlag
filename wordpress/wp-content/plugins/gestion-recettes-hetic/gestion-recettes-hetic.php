@@ -127,7 +127,7 @@ function admin_post_add_post_type_recette() {
         }
     }
 	if (isset($_GET['url'])) {
-		header("Location:" . $_GET['url'] . "?notif=" . $notif);
+		header("Location:" . get_site_url() . "/" . $_GET['url'] . "?notif=" . $notif);
 	}
 	else {
 		header("Location:" . get_site_url() . "?notif=" . $notif);

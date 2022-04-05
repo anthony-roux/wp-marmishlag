@@ -53,7 +53,7 @@ class GestionRecettesHetic {
     }
 
     public function render(): bool|string {
-        $url_action = "admin-post.php?url=" . get_permalink();
+        $url_action = "admin-post.php?url=" . get_post_field('post_name', get_post());
         ob_start();
 ?>
         <div class="gestion_notif"><?= $this->notif ?></div>
