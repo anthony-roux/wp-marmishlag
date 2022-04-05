@@ -53,13 +53,14 @@ class GestionRecettesHetic {
     }
 
     public function render(): bool|string {
+        $url_action = "admin-post.php?url=" . get_permalink();
         ob_start();
 ?>
         <div class="gestion_notif"><?= $this->notif ?></div>
 <?php
         if ($this->render == "form") :
 ?>
-        <form method="post" action="<?= admin_url('admin-post.php'); ?>">
+        <form method="post" action="<?= admin_url($url_action); ?>">
             <label for="title">Title</label><br>
             <input type="text" id="title" name="title"><br><br>
             <label for="content">Content</label><br>

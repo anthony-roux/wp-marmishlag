@@ -126,7 +126,12 @@ function admin_post_add_post_type_recette() {
             $notif = "0";
         }
     }
-	header("Location:http://localhost/davy_wordpress/gestion?notif=" . $notif);
+	if (isset($_GET['url'])) {
+		header("Location:" . $_GET['url'] . "?notif=" . $notif);
+	}
+	else {
+		header("Location:" . get_site_url() . "?notif=" . $notif);
+	}
 }
 
 function shortcode_gestion_recettes_hetic($atts) {
