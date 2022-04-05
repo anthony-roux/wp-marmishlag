@@ -34,15 +34,15 @@
 // PAGE
 @import "./pages/_search";
 @import "./pages/_account";
-
+  
 .s-like-badge {
   input {
-    + label {
+    + div {
       background-color: $white;
     }
 
     &:checked {
-      + label {
+      + div {
         background-color: $secondary;
         
         svg {

@@ -1,24 +1,41 @@
 jQuery(document).ready(function ($) {
+  const allCards = $(".c-card .card-likeable");
+  // console.log(allCards);
 
+  $(allCards).each(function () {
+    $(this).on("click", function (e) {
+      const likeId = $(this).prev().attr("data-id");
+      var myInputs = $("[data-id=" + likeId + "]");
+      $.ajax({
 
-  $(".c-card input[type='checkbox']").click(function () {
-    if ($(this).is(":checked")) {
-      $(this).addClass("isChecked");
-      $(this).attr("data-state", "checked");
-      let isChecked = $(this).is(":checked"); 
-      $(this).attr("checked");
-      $(this).closest("article.c-card").addClass("cardIsLove");
+        url: '/wp-admin/admin-post.php',
+        type: 'POST',
+        data: `action=push_favorite&postId=${likeId}`,
+        
+        success: function(result){
 
-      localStorage.setItem('checked', isChecked);
-  
-    } else if ($(this).is(":not(:checked)")) {
-      $(this).removeClass("isChecked");
-      $(this).attr("data-state", "unchecked");
-      $(this).closest("article.c-card").removeClass("cardIsLove");
-    }
+    
+        }
+    
+     });  
+
+      for (let i = 0; i < myInputs.length; i++) {
+        const element = myInputs[i];
+        if ($(element).hasClass("favorite")) {
+          $(element).prop("checked", "");
+          $(element).toggleClass("favorite");
+          $(element).closest("article.c-card").toggleeClass("cardIsLove");
+        } else {
+          $(element).prop("checked", "true");
+          $(element).toggleClass("favorite");
+          $(element).closest("article.c-card").toggleClass("cardIsLove");
+        }
+      }
+      e.preventDefault();
+    });
   });
 
-  // stored in localStorage as string, `toggle` needs boolean
-let isChecked = localStorage.getItem('checked') === 'false' ? false : true;
-$(".c-card input[type='checkbox']").toggle(isChecked);
-});
+
+       
+
+return false;});

@@ -171,6 +171,24 @@ function marmishlag_setup() {
 
 add_action( 'after_setup_theme', 'marmishlag_setup' );
 
+
+
+
+add_action( 'admin_post_push_favorite', 'push_favorite' );
+
+function push_favorite() {
+	var_dump(wp_get_current_user()->ID, $_POST['postId']);
+
+	if (wp_get_current_user()->ID < 0 && empty($_POST['postId'])) {
+		echo 'not possible';
+	} else {
+		
+		
+	}
+}
+
+
+
 function mamounettePaginateLinks()
 {
     $paginateLink = paginate_links(['type' => 'array']);
@@ -180,9 +198,9 @@ function mamounettePaginateLinks()
         echo '<ul class="flex pagination">';
 
         foreach ($paginateLink as $link) {
-            echo sprintf('<li class="page-item %s mr-3">%s</li>',
-                str_contains($link, 'current') ? 'active' : '',
-                str_replace('page-numbers', 'page-link', $link));
+					echo sprintf('<li class="page-item %s mr-3">%s</li>',
+						str_contains($link, 'current') ? 'active' : '',
+						str_replace('page-numbers', 'page-link', $link));
         }
 
         echo "</ul>";
@@ -192,6 +210,7 @@ function mamounettePaginateLinks()
     }
 }
 
+
 /**
  * Add 'last' class to last post
  * Must be using <?php post_class(" all your classes here"); ?>
@@ -199,7 +218,7 @@ function mamounettePaginateLinks()
 function add_last_class($classes) {
 	global $wp_query;
 
-  if(($wp_query->current_post + 8) == $wp_query->post_count)
+  if(($wp_query->current_post + 7) == $wp_query->post_count)
     $classes[] = 'last-post lg:col-span-2 lg:row-span-2 ';
 
   return $classes;

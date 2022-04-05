@@ -563,11 +563,14 @@ video {
 .left-8{
 	left: 2rem !important;
 }
-.z-10{
-	z-index: 10 !important;
+.z-30{
+	z-index: 30 !important;
 }
 .z-50{
 	z-index: 50 !important;
+}
+.z-10{
+	z-index: 10 !important;
 }
 .z-\[-1\]{
 	z-index: -1 !important;
@@ -587,9 +590,9 @@ video {
 	margin-top: 2rem !important;
 	margin-bottom: 2rem !important;
 }
-.my-12{
-	margin-top: 3rem !important;
-	margin-bottom: 3rem !important;
+.my-20{
+	margin-top: 5rem !important;
+	margin-bottom: 5rem !important;
 }
 .my-10{
 	margin-top: 2.5rem !important;
@@ -599,16 +602,14 @@ video {
 	margin-top: 0.5rem !important;
 	margin-bottom: 0.5rem !important;
 }
-.my-16{
-	margin-top: 4rem !important;
-	margin-bottom: 4rem !important;
-}
-.my-20{
-	margin-top: 5rem !important;
-	margin-bottom: 5rem !important;
-}
 .mb-8{
 	margin-bottom: 2rem !important;
+}
+.mt-24{
+	margin-top: 6rem !important;
+}
+.mb-32{
+	margin-bottom: 8rem !important;
 }
 .mt-12{
 	margin-top: 3rem !important;
@@ -655,9 +656,6 @@ video {
 .mt-16{
 	margin-top: 4rem !important;
 }
-.mb-32{
-	margin-bottom: 8rem !important;
-}
 .mb-6{
 	margin-bottom: 1.5rem !important;
 }
@@ -669,12 +667,6 @@ video {
 }
 .mb-12{
 	margin-bottom: 3rem !important;
-}
-.mt-32{
-	margin-top: 8rem !important;
-}
-.mt-24{
-	margin-top: 6rem !important;
 }
 .flex{
 	display: flex !important;
@@ -777,11 +769,8 @@ video {
 .grid-cols-1{
 	grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
 }
-.grid-cols-3{
-	grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-}
-.grid-rows-6{
-	grid-template-rows: repeat(6, minmax(0, 1fr)) !important;
+.grid-rows-5{
+	grid-template-rows: repeat(5, minmax(0, 1fr)) !important;
 }
 .flex-row{
 	flex-direction: row !important;
@@ -833,15 +822,11 @@ video {
 .rounded-lg{
 	border-radius: 50px !important;
 }
-.rounded-xl{
-	border-radius: 100px !important;
-}
 .rounded-md{
 	border-radius: 25px !important;
 }
-.rounded-l-md{
-	border-top-left-radius: 25px !important;
-	border-bottom-left-radius: 25px !important;
+.rounded-xl{
+	border-radius: 100px !important;
 }
 .rounded-l-sm{
 	border-top-left-radius: 4px !important;
@@ -876,9 +861,6 @@ video {
 .bg-white{
 	--tw-bg-opacity: 1 !important;
 	background-color: rgba(250, 250, 250, var(--tw-bg-opacity)) !important;
-}
-.bg-secondary-light{
-	background-color: #fc606350 !important;
 }
 .bg-cover{
 	background-size: cover !important;
@@ -949,10 +931,6 @@ video {
 	padding-top: 8rem !important;
 	padding-bottom: 8rem !important;
 }
-.px-10{
-	padding-left: 2.5rem !important;
-	padding-right: 2.5rem !important;
-}
 .pr-10{
 	padding-right: 2.5rem !important;
 }
@@ -974,6 +952,9 @@ video {
 .text-2xl{
 	font-size: 1.8rem !important;
 }
+.text-9xl{
+	font-size: 6rem !important;
+}
 .text-lg{
 	font-size: 1.4rem !important;
 }
@@ -982,9 +963,6 @@ video {
 }
 .text-8xl{
 	font-size: 4.8rem !important;
-}
-.text-9xl{
-	font-size: 6rem !important;
 }
 .text-base{
 	font-size: 1rem !important;
@@ -998,11 +976,11 @@ video {
 .text-xl{
 	font-size: 1.6rem !important;
 }
-.text-3xl{
-	font-size: 2rem !important;
-}
 .text-4xl{
 	font-size: 2.4rem !important;
+}
+.text-3xl{
+	font-size: 2rem !important;
 }
 .font-light{
 	font-weight: 300 !important;
@@ -1082,19 +1060,12 @@ video {
 	-webkit-font-smoothing: antialiased !important;
 	-moz-osx-font-smoothing: grayscale !important;
 }
-.opacity-100{
-	opacity: 1 !important;
-}
 .shadow-greyDarkerMedium{
 	--tw-shadow: 0px 0px 16px rgba(34, 67, 88, 0.1) !important;
 	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 .shadow{
 	--tw-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
-	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
-}
-.shadow-blueMedium{
-	--tw-shadow: 0px 4px 8px rgba(5, 150, 222, 0.2) !important;
 	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 .outline-none{
@@ -2053,13 +2024,13 @@ picture {
   font-weight: 600;
 }
 
-.s-like-badge input + label {
+.s-like-badge input + div {
   background-color: #fafafa;
 }
-.s-like-badge input:checked + label {
+.s-like-badge input:checked + div {
   background-color: #fc6062;
 }
-.s-like-badge input:checked + label svg path {
+.s-like-badge input:checked + div svg path {
   stroke: #fafafa;
 }
 .hover\:scale-\[1\.02\]:hover{

@@ -50,25 +50,37 @@ jQuery(document).ready(function ($) {
 /***/ (() => {
 
 jQuery(document).ready(function ($) {
-  $(".c-card input[type='checkbox']").click(function () {
-    if ($(this).is(":checked")) {
-      $(this).addClass("isChecked");
-      $(this).attr("data-state", "checked");
+  var allCards = $(".c-card .card-likeable"); // console.log(allCards);
 
-      var _isChecked = $(this).is(":checked");
+  $(allCards).each(function () {
+    $(this).on("click", function (e) {
+      var likeId = $(this).prev().attr("data-id");
+      var myInputs = $("[data-id=" + likeId + "]");
+      $.ajax({
+        url: '/wp-admin/admin-post.php',
+        type: 'POST',
+        data: "action=push_favorite&postId=".concat(likeId),
+        success: function success(result) {}
+      });
 
-      $(this).attr("checked");
-      $(this).closest("article.c-card").addClass("cardIsLove");
-      localStorage.setItem('checked', _isChecked);
-    } else if ($(this).is(":not(:checked)")) {
-      $(this).removeClass("isChecked");
-      $(this).attr("data-state", "unchecked");
-      $(this).closest("article.c-card").removeClass("cardIsLove");
-    }
-  }); // stored in localStorage as string, `toggle` needs boolean
+      for (var i = 0; i < myInputs.length; i++) {
+        var element = myInputs[i];
 
-  var isChecked = localStorage.getItem('checked') === 'false' ? false : true;
-  $(".c-card input[type='checkbox']").toggle(isChecked);
+        if ($(element).hasClass("favorite")) {
+          $(element).prop("checked", "");
+          $(element).toggleClass("favorite");
+          $(element).closest("article.c-card").toggleeClass("cardIsLove");
+        } else {
+          $(element).prop("checked", "true");
+          $(element).toggleClass("favorite");
+          $(element).closest("article.c-card").toggleClass("cardIsLove");
+        }
+      }
+
+      e.preventDefault();
+    });
+  });
+  return false;
 });
 
 /***/ }),

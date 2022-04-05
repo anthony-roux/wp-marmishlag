@@ -12,7 +12,7 @@
 		<hr>
 	</div>
 	<div class="see_also_cards">
-		<div class="grid grid-cols-3 gap-12 mx-auto my-10 lg:grid-cols-3 list-articles">
+		<div class="grid grid-cols-1 gap-12 mx-auto my-10 lg:grid-cols-3 list-articles">
 			<?php
 
 				$loop = new WP_Query(array(
