@@ -40,7 +40,6 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
 					<div class="flex text-2xl font-light uppercase item-center post-page__origin card__category"><?= $origin_description;?> &nbsp; <?= $origin;?></div>
 				<?php endif; ?>
 			</div>
-			<!-- <time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished" class="text-sm text-gray-700"><?php echo get_the_date(); ?></time> -->
 			<hr>
 
 
@@ -87,6 +86,7 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
 	
 	</article>
 
+	<!-- Voir aussi nos derniers articles -->
 	<?php get_template_part( 'template-parts/see_also' ); ?> 
 
 </section>

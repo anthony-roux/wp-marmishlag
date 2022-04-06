@@ -663,9 +663,6 @@ video {
 .mt-16{
 	margin-top: 4rem !important;
 }
-.mb-6{
-	margin-bottom: 1.5rem !important;
-}
 .mt-10{
 	margin-top: 2.5rem !important;
 }
@@ -680,6 +677,9 @@ video {
 }
 .mb-12{
 	margin-bottom: 3rem !important;
+}
+.mb-6{
+	margin-bottom: 1.5rem !important;
 }
 .flex{
 	display: flex !important;
@@ -785,31 +785,8 @@ video {
 	-webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
 	        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite !important;
 }
-@-webkit-keyframes wiggle{
-	0%, 100%{
-		transform: rotate(-5deg);
-	}
-	50%{
-		transform: rotate(5deg);
-	}
-}
-@keyframes wiggle{
-	0%, 100%{
-		transform: rotate(-5deg);
-	}
-	50%{
-		transform: rotate(5deg);
-	}
-}
-.animate-wiggle{
-	-webkit-animation: wiggle 700ms ease-in-out infinite !important;
-	        animation: wiggle 700ms ease-in-out infinite !important;
-}
 .cursor-pointer{
 	cursor: pointer !important;
-}
-.resize-none{
-	resize: none !important;
 }
 .appearance-none{
 	-webkit-appearance: none !important;
@@ -964,14 +941,6 @@ video {
 	padding-left: 0.5rem !important;
 	padding-right: 0.5rem !important;
 }
-.py-3{
-	padding-top: 0.75rem !important;
-	padding-bottom: 0.75rem !important;
-}
-.px-\[14px\]{
-	padding-left: 14px !important;
-	padding-right: 14px !important;
-}
 .px-12{
 	padding-left: 3rem !important;
 	padding-right: 3rem !important;
@@ -1025,8 +994,8 @@ video {
 .text-8xl{
 	font-size: 4.8rem !important;
 }
-.text-base{
-	font-size: 1rem !important;
+.text-6xl{
+	font-size: 3.2rem !important;
 }
 .text-xs{
 	font-size: 0.8rem !important;
@@ -1039,9 +1008,6 @@ video {
 }
 .text-4xl{
 	font-size: 2.4rem !important;
-}
-.text-6xl{
-	font-size: 3.2rem !important;
 }
 .text-md{
 	font-size: 1.1rem !important;
@@ -1134,10 +1100,6 @@ video {
 .shadow{
 	--tw-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
 	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
-}
-.outline-none{
-	outline: 2px solid transparent !important;
-	outline-offset: 2px !important;
 }
 .transition{
 	transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter !important;
@@ -2109,9 +2071,6 @@ picture {
 	--tw-bg-opacity: 1 !important;
 	background-color: rgba(115, 118, 255, var(--tw-bg-opacity)) !important;
 }
-.hover\:bg-opacity-90:hover{
-	--tw-bg-opacity: 0.9 !important;
-}
 .hover\:text-secondary:hover{
 	--tw-text-opacity: 1 !important;
 	color: rgba(252, 96, 98, var(--tw-text-opacity)) !important;
@@ -2137,10 +2096,6 @@ picture {
 .hover\:has-secondary-text-color:hover{
 	color: #FC6062;
 }
-.focus\:border-primary:focus{
-	--tw-border-opacity: 1 !important;
-	border-color: rgba(115, 118, 255, var(--tw-border-opacity)) !important;
-}
 .focus\:text-secondary:focus{
 	--tw-text-opacity: 1 !important;
 	color: rgba(252, 96, 98, var(--tw-text-opacity)) !important;
@@ -2148,10 +2103,6 @@ picture {
 .focus\:outline-none:focus{
 	outline: 2px solid transparent !important;
 	outline-offset: 2px !important;
-}
-.focus-visible\:shadow-none:focus-visible{
-	--tw-shadow: 0 0 #0000 !important;
-	box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
 }
 .group:hover .group-hover\:has-primary-text-color{
 	color: #7376FF;
