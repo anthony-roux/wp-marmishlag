@@ -30,14 +30,14 @@ if (!is_user_logged_in()) {
             <a class="flex sidebar__link is-active" href="/creer-une-recette">
               <span class="mr-2">✍️</span>
               <span>Créer une recette</span></a>
-            <a class="flex sidebar__link" href="/mes-recettes">
+            <a class="flex sidebar__link" href="/wishlist">
               <span class="mr-2">🍽</span>
-              <span>Mes recettes</span> 
+              <span>Mes recettes favorites</span> 
             </a>
           </ul>
       </div>
     </div>
-    <main role="main" class="w-full px-2 pt-1 sm:w-2/3 md:w-3/4 flex justify-center items-center">
+    <main role="main" class="flex items-center justify-center w-full px-2 pt-1 sm:w-2/3 md:w-3/4">
       <div class="w-full lg:w-1/2">
         <h1 class="text-6xl text-center">Créer une recette !</h1>
           <div class="relative bg-white rounded-lg shadow-lg sm:p-12">

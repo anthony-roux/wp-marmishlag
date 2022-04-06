@@ -10,10 +10,10 @@
   
   </div>
   
+  <?php get_template_part( 'template-parts/see_also_best-seller' ); ?> 
   <?php get_template_part( 'template-parts/see_also' ); ?> 
   <?php get_template_part( 'template-parts/see_also_faster' ); ?> 
   <?php get_template_part( 'template-parts/see_also_cheaper' ); ?> 
-  <?php get_template_part( 'template-parts/see_also_best-seller' ); ?> 
 
 <?= mamounettePaginateLinks() ?>
 

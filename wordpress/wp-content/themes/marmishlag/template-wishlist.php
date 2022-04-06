@@ -8,7 +8,7 @@
 <?php get_template_part('header');
 ?>
 
-<p class="mt-24 mb-32 text-9xl">Toutes nos recettes</p>
+<p class="mt-24 mb-32 text-9xl">Mes recettes favorites</p>
 
 <div class="grid grid-cols-1 gap-12 mx-auto mt-12 mb-24 wishlist lg:grid-cols-2 list-articles index-page">
 

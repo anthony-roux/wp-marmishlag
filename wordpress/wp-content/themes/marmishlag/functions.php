@@ -122,7 +122,7 @@ function marmishlag_setup()
 	add_filter('show_admin_bar', '__return_false');
 
 	// to desactivate gutenberg
-	add_filter('use_block_editor_for_post', '__return_true', 10);
+	add_filter('use_block_editor_for_post', '__return_false', 10);
 
 	// Block editor.
 	add_theme_support('align-wide');

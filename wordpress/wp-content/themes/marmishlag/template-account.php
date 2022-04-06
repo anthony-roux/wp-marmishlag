@@ -31,9 +31,9 @@ if (!is_user_logged_in()) {
           <a class="flex sidebar__link" href="/creer-une-recette">
             <span class="mr-2">✍️</span>
             <span>Créer une recette</span></a>
-          <a class="flex sidebar__link" href="/mes-recettes">
+          <a class="flex sidebar__link" href="/wishlist">
             <span class="mr-2">🍽</span>
-            <span>Mes recettes</span>
+            <span>Mes recettes favorites </span>
           </a>
         </ul>
       </div>
@@ -41,7 +41,7 @@ if (!is_user_logged_in()) {
     <main role="main" class="w-full px-2 pt-1">
       <div class="w-full">
         <div class="relative p-8 bg-white rounded-lg shadow-lg">
-          <p class="mb-10 sidebar__title text-7xl username text-primary">
+          <p class="my-10 sidebar__title text-7xl username text-primary">
             <?php if (is_user_logged_in()) echo 'Bonjour ' . wp_get_current_user()->user_login ?>
           </p>
           <p class="username">
@@ -49,14 +49,17 @@ if (!is_user_logged_in()) {
           </p>
           <hr>
           <p class="username">
-            <?= 'email : ' . wp_get_current_user()->user_email ?>
+            <?= 'Pseudo : ' . wp_get_current_user()->display_name ?>
           </p>
           <hr>
           <p class="username">
-            <?= 'email : ' . wp_get_current_user()->user_email ?>
+            <?= 'Mon adresse e-mail : ' . wp_get_current_user()->user_email ?>
           </p>
           <hr>
-          
+          <p class="username">
+            <?= 'Membre depuis : ' . date( "d M Y", strtotime( wp_get_current_user()->user_registered ) ) ?>
+          </p>
+          <hr>
         </div>
       </div>
     </main>

@@ -125,7 +125,7 @@ class GestionRecettesHetic
 				<input type="hidden" name="action" value="add_recettes">
 				<?php wp_nonce_field('image_upload', 'image_upload_nonce'); ?>
 				<?php wp_referer_field(); ?>
-				<input type="submit" class="w-full p-3 text-white transition border rounded cursor-pointer bg-primary border-primary hover:bg-primary-light" value="<?= $this->text_submit ?>" name="ajouter" />
+				<input type="submit" class="w-full p-3 text-white transition border rounded cursor-pointer bg-primary border-primary hover:border-primary-light hover:bg-primary-light" value="<?= $this->text_submit ?>" name="ajouter" />
 			</form>
 			<br>
 			<?= $this->notif ?>
