@@ -44,7 +44,7 @@ class GestionRecettesHetic {
         $this->notif = "";
         if (isset($_GET['notif'])) {
             if ($_GET['notif'] == "1") {
-                $this->notif = "Validé !";
+                $this->notif = "Recette crée avec succès !";
             }
             if ($_GET['notif'] == "0") {
                 $this->notif = "Veuillez remplir tous les champs";
@@ -56,9 +56,9 @@ class GestionRecettesHetic {
         $url_action = "admin-post.php?url=" . get_post_field('post_name', get_post());
         ob_start();
 ?>
-        <div class="gestion_notif"><?= $this->notif ?></div>
 <?php
         if ($this->render == "form") :
+<<<<<<< HEAD
 ?>
         <form method="post" action="<?= admin_url($url_action); ?>" enctype="multipart/form-data">
             <label for="title">Title</label><br>
@@ -70,37 +70,75 @@ class GestionRecettesHetic {
 <?php 
             foreach ($this->tax_origins as $tax_origin) : 
 ?>
+=======
+?>   
+
+        <form method="post" action="<?= admin_url($url_action); ?>">
+            <div class="mb-6">
+                <input
+                    name="title"
+                    type="text"
+                    placeholder="Nom de recettes"
+                    class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg"
+                />
+            </div>
+            <div class="mb-6">
+                <select 
+                name="tax_origin"
+                class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg"
+                id="">
+                <option value="" disabled selected>Quelle origine ?</option>
+                <?php 
+                    foreach ($this->tax_origins as $tax_origin) : 
+                ?>
+>>>>>>> main
                 <option value="<?= $tax_origin->term_id; ?>"><?= $tax_origin->name; ?></option>
-<?php 
-            endforeach; 
-?>
-            </select><br><br>
-            <label>Level</label><br>
-            <select name="tax_level">
-<?php 
-            foreach ($this->tax_levels as $tax_level) : 
-?>
+                <?php 
+                            endforeach; 
+                ?>
+                </select>
+            </div>
+            <div class="mb-6">
+                <select 
+                name="tax_level"
+                class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg"
+                id="">
+                <option value="" disabled selected>Quelle difficulté ?</option>
+                <?php 
+                    foreach ($this->tax_levels as $tax_level) : 
+                ?>
                 <option value="<?= $tax_level->term_id; ?>"><?= $tax_level->name; ?></option>
-<?php 
-            endforeach; 
-?>
-            </select><br><br>
-            <label>Cost</label><br>
-            <select name="tax_cost">
-<?php 
-            foreach ($this->tax_costs as $tax_cost) : 
-?>
+                <?php 
+                    endforeach; 
+                ?>
+                </select>
+            </div>
+            <div class="mb-6">
+                <select 
+                name="tax_cost"
+                class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg"
+                id="">
+                <option value="" disabled selected>Quelle couts ?</option>
+                <?php 
+                    foreach ($this->tax_costs as $tax_cost) :
+                ?>
                 <option value="<?= $tax_cost->term_id; ?>"><?= $tax_cost->name; ?></option>
-<?php 
-            endforeach; 
-?>
-            </select><br><br>
-            <label>Temps de préparation</label><br>
-            <select name="tax_setup_time">
-<?php 
-            foreach ($this->tax_setup_times as $tax_setup_time) : 
-?>
+                <?php 
+                    endforeach; 
+                ?>
+                </select>
+            </div>
+            <div class="mb-6">
+                <select 
+                name="tax_setup_time"
+                class="w-full bg-white lg:bg-light  h-14 px-5 pr-10 rounded-full text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded-lg"
+                id="">
+                <option value="" disabled selected>Quelle Temps de préparation ?</option>
+                <?php 
+                    foreach ($this->tax_setup_times as $tax_setup_time) : 
+                ?>
                 <option value="<?= $tax_setup_time->term_id; ?>"><?= $tax_setup_time->name; ?></option>
+<<<<<<< HEAD
 <?php 
             endforeach; 
 ?>
@@ -111,7 +149,31 @@ class GestionRecettesHetic {
             <?php wp_nonce_field('image_upload', 'image_upload_nonce'); ?>
             <?php wp_referer_field(); ?>
             <input type="submit" value="<?= $this->text_submit ?>" name="ajouter">
+=======
+                <?php 
+                    endforeach; 
+                ?>
+                </select>
+            </div>        
+            <div class="mb-6">
+                <textarea
+                    name="content"
+                    rows="6"
+                    placeholder="Your Message"
+                    class="w-full px-5 pr-10  bg-white lg:bg-light text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded"
+                ></textarea>
+            </div>
+            <input type="hidden" name="action" value="add_recettes">
+            <input  
+                type="submit" 
+                class="w-full p-3 text-white transition border rounded bg-primary border-primary hover:bg-opacity-90"
+                value="<?= $this->text_submit ?>" 
+                name="ajouter"
+            >
+>>>>>>> main
         </form>
+        <br>
+        <div class="w-1 p-3 transition border rounded bg-green-600 hover:bg-opacity-90"><?= $this->notif ?></div>
 <?php
         endif;
         return ob_get_clean();
