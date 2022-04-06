@@ -136,8 +136,7 @@ class GestionRecettesHetic {
                     rows="6"
                     placeholder="Your Message"
                     class="w-full px-5 pr-10  bg-white lg:bg-light text-lg placeholder:text-lg focus:outline-none focus:text-secondary rounded"
-                >
-                </textarea>
+                ></textarea>
             </div>
             <div class="mb-6">
                 <input 

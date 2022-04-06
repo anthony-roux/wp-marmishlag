@@ -106,7 +106,7 @@ function function_admin_post_add_recettes() {
 	$notif = "";
 
     if (isset($_POST['ajouter'])) {
-        if (!empty($_POST['title']) && !empty($_POST['content'])) {
+        if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['tax_origin']) && !empty($_POST['tax_level']) && !empty($_POST['tax_cost']) && !empty($_POST['tax_setup_time'])) {
             wp_insert_post([
                 'post_title' => $_POST['title'],
                 'post_content' => $_POST['content'],
