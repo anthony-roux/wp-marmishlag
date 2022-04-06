@@ -24,11 +24,14 @@ jQuery(document).ready(function ($) {
         if ($(element).hasClass("favorite")) {
           $(element).prop("checked", "");
           $(element).toggleClass("favorite");
-          $(element).closest("article.c-card").toggleeClass("cardIsLove");
+          $(element).closest("article.c-card").toggleClass("cardIsLove");
+          $(element).next().toggleClass("animate-wiggle");
+
         } else {
           $(element).prop("checked", "true");
-          $(element).toggleClass("favorite");
+          $(element).toggleClass("favorite ");
           $(element).closest("article.c-card").toggleClass("cardIsLove");
+          $(element).next().toggleClass("animate-wiggle");
         }
       }
       e.preventDefault();
