@@ -19,7 +19,7 @@ services:
             MYSQL_DATABASE: data
             MYSQL_ROOT_PASSWORD: pass
         volumes:
-            - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+            - ./data.sql:/docker-entrypoint-initdb.d/dump.sql
 
     wp_pma:
         image: phpmyadmin
