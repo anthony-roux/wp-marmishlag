@@ -86,10 +86,14 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
 	
 	</article>
 
+
+
 	<!-- Voir aussi nos derniers articles -->
 	<?php get_template_part( 'template-parts/see_also' ); ?> 
 
 </section>
+
+
 
 
 

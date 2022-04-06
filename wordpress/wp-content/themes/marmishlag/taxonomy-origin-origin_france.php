@@ -37,5 +37,7 @@
 ?>
 
 </div>
+<?= mamounettePaginateLinks() ?>
+
 
 <?php get_footer(); ?>

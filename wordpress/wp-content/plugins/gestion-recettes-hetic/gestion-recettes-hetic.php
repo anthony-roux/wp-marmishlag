@@ -105,14 +105,17 @@ function function_admin_post_add_recettes() {
 	status_header(200);
 	$notif = "";
 
-    if (isset($_POST['ajouter'])) {
+	$user_id = get_current_user_id();
+	
+	if ($user_id > 0 && isset($_POST['ajouter'])) {
+			
         if (!empty($_POST['title']) && !empty($_POST['content']) && !empty($_POST['tax_origin']) && !empty($_POST['tax_level']) && !empty($_POST['tax_cost']) && !empty($_POST['tax_setup_time'])) {
             wp_insert_post([
                 'post_title' => $_POST['title'],
                 'post_content' => $_POST['content'],
                 'post_type' => 'recette',
                 'post_status' => 'pending',
-                'post_author' => get_current_user_id(),
+                'post_author' => $user_id,
                 'comment_status' => 'closed',
                 'tax_input' => array(
                     'origin' => array($_POST['tax_origin']),

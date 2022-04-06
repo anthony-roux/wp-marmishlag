@@ -4,12 +4,16 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
+
 if ( post_password_required() ) {
 	return;
 }
+
 ?>
 
-<div id="comments" class="comments-area my-8">
+
+
+<div id="comments" class="my-8 comments comments-area">
 
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
@@ -21,6 +25,7 @@ if ( post_password_required() ) {
 				);
 			?>
 		</h2>
+		<hr>
 
 		<ol class="comment-list">
 			<?php
@@ -28,7 +33,7 @@ if ( post_password_required() ) {
 					array(
 						'style'       => 'ol',
 						'short_ping'  => true,
-						'avatar_size' => 56,
+						'avatar_size' => 25,
 					)
 				);
 			?>
@@ -65,8 +70,8 @@ if ( post_password_required() ) {
 	<?php
 	comment_form(
 		array(
-			'class_submit'  => 'bg-primary text-white cursor-pointer rounded font-bold py-2 px-4',
-			'comment_field' => '<textarea id="comment" name="comment" class="bg-gray-200 w-full py-2 px-3" aria-required="true"></textarea>',
+			'class_submit'  => 'bg-primary text-white cursor-pointer rounded font-bold py-4 px-8 hover:bg-primary-light',
+			'comment_field' => '<textarea id="comment" name="comment" class="w-full px-3 py-2 bg-gray-200" aria-required="true"></textarea>',
 		)
 	);
 	?>

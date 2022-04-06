@@ -13,21 +13,33 @@ function like_post_activation() {
 }
 register_activation_hook( __FILE__, 'like_post_activation' );
 
-function get_favorite_post() {
+
+function get_favorite_from_db(){ 
 	global $wpdb;
 
 	$table_name = $wpdb->prefix . 'favorite';
-
 	$user_id = wp_get_current_user()->ID;
 	if ($user_id < 0 ) {
-		echo 'error';
+		return 'error';
 	} else {
 		$favorite_data = $wpdb->get_results(
 			$wpdb->prepare(" SELECT post_id FROM $table_name WHERE user_id = %d", $user_id, ARRAY_A)
 		);
-		wp_send_json($favorite_data);
+		return $favorite_data;
 	}
+}
 
+// function save_in_session() {
+// 	$res = get_favorite_from_db();
+// 	if($res != "error"){
+// 		var_dump($res);
+// 	}
+// }
+
+
+function get_favorite_post() {
+	$res = get_favorite_from_db();
+	wp_send_json($res);
 }
 
 function add_remove_favorite_post() {
@@ -71,6 +83,6 @@ function add_remove_favorite_post() {
 
 }
 
-
+add_action('get_favorite_test', 'get_favorite_from_db');
 add_action('admin_post_get_favorite', 'get_favorite_post');
 add_action('admin_post_add_remove_favorite', 'add_remove_favorite_post');
