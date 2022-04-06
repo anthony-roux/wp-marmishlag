@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-	<div class="container my-8 mx-auto single-page">
+	<div class="container mx-auto my-24 single-page">
 
 	<?php if ( have_posts() ) : ?>
 

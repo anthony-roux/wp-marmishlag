@@ -1,7 +1,7 @@
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-12 content' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'mb-12 content page-article' ); ?>>
 
 	<header class="mb-4 entry-header">
-		<?php the_title( sprintf( '<h2 class="mb-4 text-2xl font-extrabold leading-tight entry-title md:text-3xl font-pacifico"><a href="%s" rel="bookmark" class="text-4xl font-pacifico">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		<?php the_title( sprintf( '<h2 class="mb-4 font-extrabold leading-tight text-9xl entry-title md:text-3xl font-pacifico"><a href="%s" rel="bookmark" class="text-4xl font-pacifico">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 		<time datetime="<?php echo get_the_date( 'c' ); ?>" itemprop="datePublished" class="text-sm text-gray-700"><?php echo get_the_date(); ?></time>
 	</header>
 

@@ -9,7 +9,11 @@ module.exports = {
   mode: "jit",
   tailpress,
   purge: {
-    content: require('fast-glob').sync(["./*.php", "./*/*.php", "./safelist.txt"]),
+    content: require("fast-glob").sync([
+      "./*.php",
+      "./*/*.php",
+      "./safelist.txt",
+    ]),
   },
   theme: {
     fontFamily: {
@@ -99,9 +103,22 @@ module.exports = {
     },
     extend: {
       colors: tailpress.colors,
-    },
-    scale: {
-      flip: '-1',
+      keyframes: {
+        wiggle: {
+          "0%, 100%": {
+            transform: "rotate(-5deg)",
+          },
+          "50%": {
+            transform: "rotate(5deg)",
+          },
+        },
+      },
+      animation: {
+        wiggle: "wiggle 700ms ease-in-out infinite",
+      },
+      scale: {
+        flip: "-1",
+      },
     },
   },
   plugins: [
