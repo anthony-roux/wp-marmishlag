@@ -1850,6 +1850,61 @@ picture {
   width: 100%;
 }
 
+input[type=file]::-webkit-file-upload-button{
+	cursor: pointer;
+	border-radius: 25px;
+	border-width: 0px;
+	--tw-bg-opacity: 1;
+	background-color: rgba(115, 118, 255, var(--tw-bg-opacity));
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	padding-left: 2rem;
+	padding-right: 1rem;
+	font-size: 1.1rem;
+	font-weight: 500;
+	--tw-text-opacity: 1;
+	color: rgba(250, 250, 250, var(--tw-text-opacity));
+}
+
+input[type=file]::-webkit-file-upload-button, input[type=file]::file-selector-button{
+	cursor: pointer;
+	border-radius: 25px;
+	border-width: 0px;
+	--tw-bg-opacity: 1;
+	background-color: rgba(115, 118, 255, var(--tw-bg-opacity));
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+	padding-left: 2rem;
+	padding-right: 1rem;
+	font-size: 1.1rem;
+	font-weight: 500;
+	--tw-text-opacity: 1;
+	color: rgba(250, 250, 250, var(--tw-text-opacity));
+}
+
+input[type=file]::-webkit-file-upload-button:hover{
+	background-color: #7375ff50;
+}
+
+input[type=file]::-webkit-file-upload-button:hover, input[type=file]::file-selector-button:hover{
+	background-color: #7375ff50;
+}
+
+input[type=file]::-webkit-file-upload-button {
+  -webkit-margin-start: -1rem;
+          margin-inline-start: -1rem;
+  -webkit-margin-end: 1rem;
+          margin-inline-end: 1rem;
+}
+
+input[type=file]::-webkit-file-upload-button,
+input[type=file]::file-selector-button {
+  -webkit-margin-start: -1rem;
+          margin-inline-start: -1rem;
+  -webkit-margin-end: 1rem;
+          margin-inline-end: 1rem;
+}
+
 .dropdown-recettes {
   position: relative;
   transition: all 1s ease-in;

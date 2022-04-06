@@ -69,4 +69,11 @@ picture {
   width: 100%;
 }
 
+input[type=file]::-webkit-file-upload-button,
+input[type=file]::file-selector-button {
+    @apply text-white bg-primary hover:bg-primary-light font-medium text-md cursor-pointer border-0 rounded-md py-3 pl-8 pr-4;
+    margin-inline-start: -1rem;
+    margin-inline-end: 1rem;
+}
+
 
