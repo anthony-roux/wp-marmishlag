@@ -1,4 +1,8 @@
 <?php
+
+
+
+
 class GestionRecettesHetic
 {
 	private $notif;
@@ -10,12 +14,12 @@ class GestionRecettesHetic
 	private $tax_costs;
 	private $tax_setup_times;
 
-	public function __construct(string|array $atts)
+	public function __construct($atts)
 	{
 		$this->get_variables($this->defaults_shortcode_attributes($atts));
 	}
 
-	public function defaults_shortcode_attributes(string|array $atts): array
+	public function defaults_shortcode_attributes($atts)
 	{
 		return shortcode_atts([
 			'post_type' => "recette",
@@ -24,7 +28,7 @@ class GestionRecettesHetic
 		], $atts);
 	}
 
-	public function get_variables(array $attributes): void
+	public function get_variables($attributes)
 	{
 		$this->post_type = $attributes['post_type'];
 		$this->text_submit = $attributes['text_submit'];
@@ -48,15 +52,15 @@ class GestionRecettesHetic
 		$this->notif = "";
 		if (isset($_GET['notif'])) {
 			if ($_GET['notif'] == "1") {
-				$this->notif = '<div class="w-1 p-3 transition bg-green-600 border rounded hover:bg-opacity-90">Recette créée avec succès !</div>';
+				$this->notif = '<div class="w-1 p-3 transition bg-green-600 border rounded hover:bg-opacity-90">Recette créée avec succès, celle-ci est attente de validation par un administrateur.</div>';
 			}
 			if ($_GET['notif'] == "0") {
-				$this->notif = '<div class="w-1 p-3 text-red-500 transition bg-green-600 border rounded hover:bg-opacity-90">Veuillez remplir tout les champs</div>';
+				$this->notif = '<div class="w-1 p-3 text-red-500 transition bg-green-600 border rounded hover:bg-opacity-90">Veuillez remplir tout les champs.</div>';
 			}
 		}
 	}
 
-	public function render(): bool|string
+	public function render()
 	{
 		$url_action = "admin-post.php?url=" . get_post_field('post_name', get_post());
 		ob_start();
@@ -64,11 +68,12 @@ class GestionRecettesHetic
 ?>
 			<form method="post" action="<?= admin_url($url_action); ?>" enctype="multipart/form-data">
 				<div class="mb-6">
-					<input name="title" type="text" placeholder="Nom de recettes" class="w-full px-5 pr-10 text-lg bg-white rounded lg:bg-light h-14 placeholder:text-lg focus:outline-none focus:text-secondary active:text-secondary" />
+				<label class="" for="title">Nom de la recette</label>
+					<input name="title" type="text" placeholder="Tartiflette" class="w-full px-5 pr-10 mt-3 text-lg rounded placeholder-dark bg-light h-14 placeholder:text-lg focus:outline-none focus:text-secondary active:text-secondary" />
 				</div>
 				<div class="mb-6">
-					<select name="tax_origin" class="w-full px-5 pr-10 text-lg bg-white rounded lg:bg-light h-14 placeholder:text-lg focus:outline-none focus:text-secondary" id="">
-						<option class="text-grey" value="" disabled selected>Recette originaire de ?</option>
+				<label for="tax_origin">Choisir l'origine de la recette<label>
+					<select name="tax_origin" class="w-full px-5 pr-10 mt-3 text-lg rounded bg-light h-14 placeholder:text-lg focus:outline-none focus:text-secondary">
 						<?php
 						foreach ($this->tax_origins as $tax_origin) :
 						?>
@@ -79,8 +84,8 @@ class GestionRecettesHetic
 					</select>
 				</div>
 				<div class="mb-6">
-					<select name="tax_level" class="w-full px-5 pr-10 text-lg bg-white rounded lg:bg-light h-14 placeholder:text-lg focus:outline-none focus:text-secondary" id="">
-						<option value="" disabled selected>Le niveau de difficulté ?</option>
+				<label for="tax_level">Choisir un niveau de difficulté<label>
+					<select name="tax_level" class="w-full px-5 pr-10 mt-3 text-lg rounded bg-light h-14 placeholder:text-lg focus:outline-none focus:text-secondary" id="">
 						<?php
 						foreach ($this->tax_levels as $tax_level) :
 						?>
@@ -91,8 +96,8 @@ class GestionRecettesHetic
 					</select>
 				</div>
 				<div class="mb-6">
-					<select name="tax_cost" class="w-full px-5 pr-10 text-lg bg-white rounded lg:bg-light h-14 placeholder:text-lg focus:outline-none focus:text-secondary" id="">
-						<option value="" disabled selected>Le coût estimé ?</option>
+					<label for="tax_cost">Le budget à prévoir <label>
+					<select name="tax_cost" class="w-full px-5 pr-10 mt-3 text-lg rounded bg-light h-14 placeholder:text-lg focus:outline-none focus:text-secondary">
 						<?php
 						foreach ($this->tax_costs as $tax_cost) :
 						?>
@@ -103,8 +108,8 @@ class GestionRecettesHetic
 					</select>
 				</div>
 				<div class="mb-6">
-					<select name="tax_setup_time" class="w-full px-5 pr-10 my-4 text-lg bg-white rounded lg:bg-light h-14 placeholder:text-lg focus:outline-none focus:text-secondary" id="">
-						<option class="" value="" disabled selected>Quel temps de préparation ?</option>
+					<label class="" for="tax_setup_time">Choisir un temps de préparation</label>
+					<select name="tax_setup_time" class="w-full px-5 pr-10 my-4 mt-3 text-lg rounded bg-light h-14 placeholder:text-lg focus:outline-none focus:text-secondary" id="">
 						<?php
 						foreach ($this->tax_setup_times as $tax_setup_time) :
 						?>
@@ -115,7 +120,8 @@ class GestionRecettesHetic
 					</select>
 				</div>
 				<div class="mb-6">
-					<textarea name="content" rows="6" placeholder="Votre recette ici" class="w-full px-6 py-6 text-lg bg-white rounded lg:bg-light placeholder:text-lg focus:outline-none focus:text-secondary "></textarea>
+				<label class="" for="content">Le descriptif de la recette</label>
+					<textarea name="content" rows="6" placeholder="ÉTAPE 1 : Eplucher les pommes de terre, les couper en dés, bien les rincer et les essuyer dans un torchon propre...." class="w-full px-6 py-6 mt-3 text-lg rounded bg-light placeholder:text-lg focus:outline-none focus:text-secondary "></textarea>
 				</div>
 				<div class="mb-6">
 					<label class="block mb-4 text-sm font-medium text-dark " for="image_upload">Ajoutez une photo de ma recette</label>

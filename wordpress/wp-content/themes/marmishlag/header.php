@@ -16,15 +16,15 @@
 	<div id="page" class="relative h-screen overflow-scroll lg:overflow-visible lg:h-auto">
 
 
-		<header class="sticky top-0 left-0 z-30 transition duration-200 bg-white header shadow-greyDarkerMedium ">
+		<header class="sticky top-0 left-0 z-30 overflow-hidden transition duration-200 bg-white header shadow-greyDarkerMedium ">
 			<nav class="container flex items-center justify-between py-6 ">
-				<div class="header__logo min-h-[24px] min-w-max">
+				<div class="header__logo min-h-[24px] max-w-[14rem]">
 					<a href="<?php echo get_bloginfo('url'); ?>">
 						<img class="h-16 cursor-pointer" src="<?= get_template_directory_uri(); ?>/img/logo.png" alt="" />
 						<?php the_custom_logo(); ?>
 					</a>
 				</div>
-				<div id="header__center" class="absolute left-0 z-50 flex flex-col-reverse justify-end w-full h-screen p-12 transition-all duration-300 translate-x-full lg:flex-row lg:translate-x-0 lg:static top-28 bg-light lg:bg-transparent lg:w-auto lg:h-auto lg:p-0 ">
+				<div id="header__center" class="absolute left-0 z-50 flex-col-reverse justify-end w-full h-screen p-12 transition-all duration-300 translate-x-full o lg:flex lg:flex-row lg:translate-x-0 lg:static top-28 bg-light lg:bg-transparent lg:w-auto lg:h-auto lg:p-0">
 					<?php wp_nav_menu(
 						array(
 							'theme_location'  => 'header',
@@ -56,30 +56,27 @@
 						<!-- Wishlist -->
 						<div class="mr-4 text-secondary hover:text-secondary">
 							<a href="/wishlist">
-								<?php echo is_user_logged_in() ? '            <svg width="26" height="26" viewBox="0 0 48 48" fill="none" class="" xmlns="http://www.w3.org/2000/svg">
-								<path d="M15 8C8.925 8 4 12.925 4 19C4 30 17 40 24 42.326C31 40 44 30 44 19C44 12.925 39.075 8 33 8C29.28 8 25.99 9.847 24 12.674C22.9857 11.2292 21.6382 10.0501 20.0715 9.23649C18.5049 8.42289 16.7653 7.99875 15 8Z" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+								<?php echo is_user_logged_in() ? '            
+								<svg width="26" height="26" viewBox="0 0 48 48" fill="none" class="" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15 8C8.925 8 4 12.925 4 19C4 30 17 40 24 42.326C31 40 44 30 44 19C44 12.925 39.075 8 33 8C29.28 8 25.99 9.847 24 12.674C22.9857 11.2292 21.6382 10.0501 20.0715 9.23649C18.5049 8.42289 16.7653 7.99875 15 8Z" fill="currentColor" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 								</svg>
 								' : '	'
 								?>
 							</a>
 						</div>
 
-						<div class="flex items-center justify-end w-full transition duration-200 cursor-pointer lg:w-auto hover:text-secondary">
+						<div class="flex items-center justify-end w-full transition duration-200 cursor-pointer lg:flex-row flex- lg:w-auto hover:text-secondary">
 							<!-- log in -->
-							<?php echo is_user_logged_in() ? '<svg class="w-10 h-10 mr-2" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-						<path d="M15.1801 10.94C15.3801 10.5 15.5001 10.02 15.5001 9.5C15.5001 7.57 13.9301 6 12.0001 6C11.4801 6 11.0001 6.12 10.5601 6.32L15.1801 10.94Z" />
-						<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 15C9.68 15 7.55 15.8 5.86 17.12C4.65692 15.6853 3.9983 13.8723 4 12C4 10.15 4.63 8.45 5.69 7.1L8.55 9.96C8.6493 10.7182 8.99626 11.4223 9.53696 11.963C10.0777 12.5037 10.7818 12.8507 11.54 12.95L13.74 15.15C13.17 15.05 12.59 15 12 15ZM18.31 16.9L7.1 5.69C8.49686 4.59177 10.2231 3.99639 12 4C16.42 4 20 7.58 20 12C20 13.85 19.37 15.54 18.31 16.9Z" />
-						</svg>
-						' : '						<svg class="w-10 h-10 mr-2" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-						<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C10.8119 19.2 9.64218 18.906 8.59528 18.3441C7.54837 17.7823 6.65678 16.9701 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C17.3432 16.9701 16.4516 17.7823 15.4047 18.3441C14.3578 18.906 13.1881 19.2 12 19.2Z"/>
-						</svg>'
-
-							?>
+							<?php if (is_user_logged_in()) { ?>
+								<img class="w-12 h-12 mr-3 rounded-xl" src="<?php echo esc_url( get_avatar_url( get_current_user_id() ) ); ?>" />
+							<?	} else { ?>
+							<svg class="w-10 h-10 mr-2 " width="24" height="24" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 5C13.66 5 15 6.34 15 8C15 9.66 13.66 11 12 11C10.34 11 9 9.66 9 8C9 6.34 10.34 5 12 5ZM12 19.2C10.8119 19.2 9.64218 18.906 8.59528 18.3441C7.54837 17.7823 6.65678 16.9701 6 15.98C6.03 13.99 10 12.9 12 12.9C13.99 12.9 17.97 13.99 18 15.98C17.3432 16.9701 16.4516 17.7823 15.4047 18.3441C14.3578 18.906 13.1881 19.2 12 19.2Z"/>
+							</svg>
+							<?	} ?>
+							       
 							<div>
-								<p class="username">
-									<?php if (is_user_logged_in()) echo 'Bonjour ' . wp_get_current_user()->user_login ?>
-								</p>
-								<?php echo is_user_logged_in() ? '<a href="/logout" class="hidden text-md md:flex">Se déconnecter</a>' : '<a href="login" class="hidden text-lg md:flex">Se connecter</a>' ?>
+								<?php echo is_user_logged_in() ? '<a href="/logout" class="text-md lg:text-lg md:flex">Se déconnecter</a>' : '<a href="login" class="text-lg md:flex">Se connecter</a>' ?>
 							</div>
 						</div>
 					</div>

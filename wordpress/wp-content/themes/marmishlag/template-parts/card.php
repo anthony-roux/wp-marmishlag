@@ -29,8 +29,10 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
 
     <div class="relative w-2/4 bg-center bg-cover rounded-md" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/gazpacho.jpeg');">
     <?php } ?>
+    <?php  if(is_user_logged_in()) { ?>
+
       <div class="absolute z-10 flex items-center justify-center w-16 h-16 overflow-hidden shadow s-like-badge rounded-xl -top-8 -right-8 ">
-      <?php if($args["class"] == "cardIsLove"){ ?> 
+        <?php if($args["class"] == "cardIsLove"){ ?> 
         <input type="checkbox" name="like-badge-<?php the_ID(); ?>" id="like-badge-<?php the_ID(); ?>" checked data-id="<?php the_ID(); ?>" class="appearance-none  like-badge-<?php the_ID(); ?>" >
         <? } else { ?> 
           <input type="checkbox" name="like-badge-<?php the_ID(); ?>" id="like-badge-<?php the_ID(); ?>"  data-id="<?php the_ID(); ?>" class="appearance-none  like-badge-<?php the_ID(); ?>" >
@@ -43,6 +45,7 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
           </div>
         </div>
       </div>
+      <?php } ?>
     </div>
   
     <div class="flex flex-col justify-between w-2/4 px-8 py-6 md:min-w-2/4">

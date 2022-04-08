@@ -32,12 +32,12 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
 		<div class="entry-content">
 		
 		<header class="mb-10 entry-header">
-			<div class="flex items-center justify-between post-page__header">
+			<div class="flex flex-col justify-between lg:items-center lg:flex-row post-page__header">
 				<p class="mb-4 text-6xl lg:text-8xl font-pacifico ">
 					<?= the_title(); ?>
 				</p>
 				<?php if($origin): ?>
-					<div class="flex text-2xl font-light uppercase item-center post-page__origin card__category"><?= $origin_description;?> &nbsp; <?= $origin;?></div>
+					<div class="flex mt-4 text-2xl font-light uppercase lg:mt-0 item-center post-page__origin card__category"><?= $origin_description;?> &nbsp; <?= $origin;?></div>
 				<?php endif; ?>
 			</div>
 			<hr>
@@ -45,7 +45,7 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
 
 			
 			<div class="post-page__taxos">
-				<div class="flex flex-col flex-wrap items-center justify-between lg:w-1/2 lg:flex-row">
+				<div class="flex flex-col flex-wrap justify-between lg:items-center lg:w-1/2 lg:flex-row">
 					<?php if($level): ?>
 						<div class="my-2">
 							<p class="uppercase text-md">Niveau de difficulté : <span class="ml-4 text-lg font-bold text-secondary"><?= strtolower($level) ?></span> </p>
@@ -68,7 +68,7 @@ if($taxonomies_origin || $taxonomies_level || $taxonomies_cost || $taxonomies_se
 			<div class="grid grid-cols-1 gap-12 mx-auto mt-12 mb-32 post-page__img lg:grid-cols-2">
 				<?php if ( has_post_thumbnail() ) { ?>
 					<div class="relative">
-						<img class="rounded-md" src="<?= the_post_thumbnail_url('listing-card') ?>" alt="<?php the_title(); ?>">
+						<img class="rounded-sm lg:rounded-md" src="<?= the_post_thumbnail_url('listing-card') ?>" alt="<?php the_title(); ?>">
 						<?php if($categories): ?>
 							<div class="absolute z-10 inline-flex px-6 py-4 text-2xl font-bold text-white uppercase border rounded-md cursor-pointer animate-pulse top-8 left-8 border-primary bg-primary-light hover:bg-primary card__category"><?php echo $categories; ?></div>
 						<?php endif; ?>

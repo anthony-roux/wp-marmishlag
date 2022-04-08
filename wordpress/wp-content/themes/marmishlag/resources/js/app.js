@@ -3,5 +3,6 @@
 import "./scripts/LikeBadge";
 import "./scripts/Login";
 import "./scripts/Burger";
+import "./scripts/MiniCard";
 
 

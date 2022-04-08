@@ -25,7 +25,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scripts_Login__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_scripts_Login__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _scripts_Burger__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./scripts/Burger */ "./resources/js/scripts/Burger.js");
 /* harmony import */ var _scripts_Burger__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_scripts_Burger__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _scripts_MiniCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./scripts/MiniCard */ "./resources/js/scripts/MiniCard.js");
+/* harmony import */ var _scripts_MiniCard__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_scripts_MiniCard__WEBPACK_IMPORTED_MODULE_3__);
 // Import here each JS file from the scripts forlder :
+
 
 
 
@@ -40,8 +43,9 @@ __webpack_require__.r(__webpack_exports__);
 
 jQuery(document).ready(function ($) {
   $("#nav-burger").click(function () {
-    $("#header__center").toggleClass("translate-x-full");
+    $("#header__center").toggleClass("translate-x-full flex is-clicked");
     $("#header__ul").toggleClass("hidden");
+    $(this).closest('.header').toggleClass("overflow-hidden");
   });
   $("#header__ul li").click(function () {
     $("#header__center").toggleClass("translate-x-full");
@@ -229,6 +233,28 @@ jQuery(document).ready(function ($) {
       $(".signin-active").toggleClass("signin-inactive");
       $(".forgot").toggleClass("forgot-left");
       $(this).removeClass("idle").addClass("active");
+    });
+  });
+});
+
+/***/ }),
+
+/***/ "./resources/js/scripts/MiniCard.js":
+/*!******************************************!*\
+  !*** ./resources/js/scripts/MiniCard.js ***!
+  \******************************************/
+/***/ (() => {
+
+jQuery(document).ready(function ($) {
+  var allCardsMiniButton = $(".c-card-mini__btn");
+  console.log(allCardsMiniButton);
+  $(allCardsMiniButton).each(function () {
+    $(this).on("click", function () {
+      $(this).closest(".c-card--mini").toggleClass("card-mini-is-active");
+      $(".card-mini-is-active .c-card--mini__back").removeClass("z-[-1]");
+      $(".card-mini-is-active .c-card--mini__back").addClass("z-[11]");
+      $(".card-mini-is-active h3").addClass("text-secondary");
+      $(this).toggleClass("flex opacity-0");
     });
   });
 });

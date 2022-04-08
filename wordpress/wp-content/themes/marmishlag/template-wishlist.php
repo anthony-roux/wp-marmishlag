@@ -8,7 +8,7 @@
 <?php get_template_part('header');
 ?>
 
-<p class="mt-24 mb-32 text-9xl">Mes recettes favorites</p>
+<p class="mt-24 mb-32 text-7xl lg:text-9xl">Mes recettes favorites</p>
 
 <div class="grid grid-cols-1 gap-12 mx-auto mt-12 mb-24 wishlist lg:grid-cols-2 list-articles index-page">
 
@@ -20,13 +20,13 @@
   ?>
 
   <?php $args = array(
-    'post_type'         => 'recette',
+    'post_type' => 'recette',
+    'posts_per_page' => -1,
   );
   $the_query = new WP_Query($args);
 
   // The Loop
   if ($the_query->have_posts()) {
-
     while ($the_query->have_posts()) {
       $the_query->the_post();
       if (in_array(get_the_ID(), $tabID)) {

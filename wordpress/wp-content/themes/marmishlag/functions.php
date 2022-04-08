@@ -174,7 +174,10 @@ function marmishlag_setup()
 	}
 
 	add_filter('excerpt_length', 'wpdocs_custom_excerpt_length', 999);
+	
 }
+
+
 
 add_action('after_setup_theme', 'marmishlag_setup');
 
@@ -235,8 +238,8 @@ function add_last_class($classes)
 
 add_filter('post_class', 'add_last_class');
 
-
-
+	
+	
 if (function_exists('acf_add_options_page')) {
 
 	acf_add_options_page(array(
