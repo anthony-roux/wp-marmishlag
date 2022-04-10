@@ -768,11 +768,11 @@ video {
 .max-w-sm{
 	max-width: 24rem !important;
 }
-.max-w-2xl{
-	max-width: 42rem !important;
-}
 .max-w-\[14rem\]{
 	max-width: 14rem !important;
+}
+.max-w-2xl{
+	max-width: 42rem !important;
 }
 .flex-grow{
 	flex-grow: 1 !important;
@@ -970,10 +970,6 @@ video {
 	padding-left: 1.5rem !important;
 	padding-right: 1.5rem !important;
 }
-.px-12{
-	padding-left: 3rem !important;
-	padding-right: 3rem !important;
-}
 .py-3{
 	padding-top: 0.75rem !important;
 	padding-bottom: 0.75rem !important;
@@ -1020,8 +1016,8 @@ video {
 .text-2xl{
 	font-size: 1.8rem !important;
 }
-.text-9xl{
-	font-size: 6rem !important;
+.text-7xl{
+	font-size: 4rem !important;
 }
 .text-lg{
 	font-size: 1.4rem !important;
@@ -1050,8 +1046,8 @@ video {
 .text-4xl{
 	font-size: 2.4rem !important;
 }
-.text-7xl{
-	font-size: 4rem !important;
+.text-9xl{
+	font-size: 6rem !important;
 }
 .font-light{
 	font-weight: 300 !important;
@@ -2111,6 +2107,19 @@ input[type=file]::file-selector-button {
 /**
 //  * Comments Wrapper
 //  */
+.s-like-badge:hover path {
+  stroke: #fc6062;
+}
+.s-like-badge input + div {
+  background-color: #fafafa;
+}
+.s-like-badge input:checked + div {
+  background-color: #fc6062;
+}
+.s-like-badge input:checked + div svg path {
+  stroke: #fafafa;
+}
+
 .signin-active a {
   padding-bottom: 10px;
   text-decoration: none;
@@ -2204,16 +2213,6 @@ input[type=file]::file-selector-button {
 .page-template-template-create_recipe .sidebar__link.is-active span:not(:first-child), .page-template-template-account .sidebar__link.is-active span:not(:first-child), .page-template-template-my_recipes .sidebar__link.is-active span:not(:first-child) {
   color: #fc6062;
   font-weight: 600;
-}
-
-.s-like-badge input + div {
-  background-color: #fafafa;
-}
-.s-like-badge input:checked + div {
-  background-color: #fc6062;
-}
-.s-like-badge input:checked + div svg path {
-  stroke: #fafafa;
 }
 .hover\:scale-\[1\.02\]:hover{
 	--tw-scale-x: 1.02 !important;
@@ -2420,6 +2419,9 @@ input[type=file]::file-selector-button {
 	.lg\:text-left{
 		text-align: left !important;
 	}
+	.lg\:text-9xl{
+		font-size: 6rem !important;
+	}
 	.lg\:text-lg{
 		font-size: 1.4rem !important;
 	}
@@ -2431,9 +2433,6 @@ input[type=file]::file-selector-button {
 	}
 	.lg\:text-5xl{
 		font-size: 2.8rem !important;
-	}
-	.lg\:text-9xl{
-		font-size: 6rem !important;
 	}
 	.lg\:hover\:opacity-0:hover{
 		opacity: 0 !important;

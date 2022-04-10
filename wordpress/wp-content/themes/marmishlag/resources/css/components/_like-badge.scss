@@ -1,0 +1,25 @@
+.s-like-badge {
+  &:hover {
+    path {
+      stroke: $secondary;
+    }
+  }
+  input {
+    + div {
+      background-color: $white;
+    }
+
+
+    &:checked {
+      + div {
+        background-color: $secondary;
+        
+        svg {
+          path {
+            stroke: $white;
+          }
+        }
+      }
+    }
+  }
+}

@@ -16,7 +16,7 @@
 	<div id="page" class="relative h-screen overflow-scroll lg:overflow-visible lg:h-auto">
 
 
-		<header class="sticky top-0 left-0 z-30 overflow-hidden transition duration-200 bg-white header shadow-greyDarkerMedium ">
+		<header class="sticky top-0 left-0 z-30 overflow-hidden transition duration-200 bg-white lg:overflow-visible header shadow-greyDarkerMedium ">
 			<nav class="container flex items-center justify-between py-6 ">
 				<div class="header__logo min-h-[24px] max-w-[14rem]">
 					<a href="<?php echo get_bloginfo('url'); ?>">
@@ -33,7 +33,7 @@
 							'container_class' => 'lg:flex items-center space-x-10  ',
 							'container_aria_label' => '??',
 							'menu_id'              => 'header__ul',
-							'menu_class'           => 'lg:flex hidden items-center lg:space-x-10 py-12 lg:py-0',
+							'menu_class'           => 'hidden lg:flex items-center lg:space-x-10 py-12 lg:py-0',
 							'li_class'        => 'text-sm hover:text-red-500 transition duration-200 cursor-pointer',
 							'fallback_cb'     => false,
 							'walker'         => new Mamounette_dropdown_menu

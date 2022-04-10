@@ -4,7 +4,6 @@
 
 @import "custom.scss";
 
-
 // SETTINGS
 @import "./settings/fonts";
 @import "./settings/variables";
@@ -29,34 +28,10 @@
 @import "./components/_dropdown";
 @import "./components/_header";
 @import "./components/_comments";
+@import "./components/_like-badge";
 
 //LAYOUTS
 @import "./layouts/login.scss";
 // PAGE
 @import "./pages/_search";
 @import "./pages/_account";
-  
-.s-like-badge {
-  input {
-    + div {
-      background-color: $white;
-    }
-
-    &:checked {
-      + div {
-        background-color: $secondary;
-        
-        svg {
-          path {
-            stroke: $white;
-          }
-        }
-      }
-    }
-  }
-}
-
-// input:checked + label {
-//   background-color: aquamarine;
-// }
-
